@@ -1,0 +1,128 @@
+<section
+  class="hero-section"
+  style="
+    background-image:url({{ section.settings.background_image }})
+    background-size:{{ section.settings.background_size }};
+    background-position:{{ section.settings.background_position }};
+  "
+>
+  <div class="hero-text-content hero-text-content--{{section.settings.text_position}}">
+    <h1 class="hero-heading">{{ section.settings.heading }}</h1>
+    <p class="hero-subheading">{{ section.settings.subheading }}</p>
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="hero-button">
+        {{- section.settings.button_text }}
+        {% if section.settings.button_icon != blank %}
+          <img
+            class="hero-button-icon"
+            src="{{ section.settings.button_icon | image_url : width: 24 }}"
+            width="24"
+            height="auto"
+            alt="Button Icon"
+          >
+        {% endif %}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        { "value": "bottom", "label": "Bottom" },
+        { "value": "top left", "label": "Top Left" },
+        { "value": "top right", "label": "Top Right" },
+        { "value": "center left", "label": "Center Left" },
+        { "value": "center right", "label": "Center Right" },
+        { "value": "bottom left", "label": "Bottom Left" },
+        { "value": "bottom right", "label": "Bottom Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text Position",
+      "options": [
+        {
+          "value": "top-center",
+          "label": "Top Center"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "center-left",
+          "label": "Center Left"
+        },
+        {
+          "value": "center-right",
+          "label": "Center Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}
