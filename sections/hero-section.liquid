@@ -15,12 +15,19 @@
     style="
       width:'100%';
       max-width:{{ section.settings.hero_text_content__max_width }};
+      color:{{ section.settings.text_color }};
     "
   >
-    <h1 class="hero-heading">{{ section.settings.heading }}</h1>
-    <p class="hero-subheading">{{ section.settings.subheading }}</p>
+    <h1 class="hero-heading" style="color:{{ section.settings.heading_color }}">{{ section.settings.heading }}</h1>
+    <p class="hero-subheading" style="color:{{ section.settings.subheading_color }}">
+      {{ section.settings.subheading }}
+    </p>
     {% if section.settings.button_text != blank %}
-      <a href="{{ section.settings.button_link }}" class="hero-button">
+      <a
+        href="{{ section.settings.button_link }}"
+        class="hero-button"
+        style="background-color:{{ section.settings.button_background_color }}; color:{{ section.settings.button_text_color }};"
+      >
         {{- section.settings.button_text }}
         {% if section.settings.button_icon != blank %}
           <img
@@ -41,7 +48,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    color: #000;
     text-align: left;
   }
 
@@ -57,7 +63,6 @@
   .hero-text-content a {
     margin: 0;
     padding: 0;
-    color: inherit;
   }
 
   .hero-heading {
@@ -82,7 +87,6 @@
     text-decoration: none;
     border-radius: 0;
     font-size: 16px;
-    font-weight: bold;
     font-weight: 400;
     line-height: 20.48px;
     letter-spacing: 0px;
@@ -100,6 +104,24 @@
 {
   "name": "Hero Section",
   "settings": [
+    {
+      "type": "range",
+      "id": "hero_text_content__height",
+      "label": "Hero Text Content Height",
+      "min": 100,
+      "max": 1000,
+      "step": 10,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "hero_text_content__max_width",
+      "label": "Hero Text Content Max Width",
+      "min": 100,
+      "max": 1200,
+      "step": 10,
+      "default": 600
+    },
     {
       "type": "image_picker",
       "id": "background_image",
@@ -191,11 +213,26 @@
       "default": "Welcome to Our Store"
     },
     {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    { "type": "color", "id": "heading_color", "label": "Heading Color", "default": "#000000" },
+
+    {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
       "default": "Discover our latest collection"
     },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading Color",
+      "default": "#000000"
+    },
+
     {
       "type": "text",
       "id": "button_text",
@@ -207,6 +244,18 @@
       "id": "button_link",
       "label": "Button Link",
       "default": "/collections/all"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#FFFFFF"
     },
     {
       "type": "image_picker",
