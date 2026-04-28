@@ -14,7 +14,7 @@
     background-image:url({{ section.settings.background_image }});
     background-size:{{ section.settings.background_size }};
     background-position:{{ section.settings.background_position }};
-    min-height:{{ section.settings.hero_text_content__min_height }}vh;
+    min-height:{{ section.settings.hero_text_content__min_height }};
     align-items:{{ section.settings['align-items'] }};
     justify-content:{{ section.settings['justify-content'] }};
   "
@@ -24,7 +24,7 @@
     class="hero-text-content"
     style="
       width:100%;
-      max-width:{{ section.settings.hero_text_content__max_width }}px;
+      max-width:{{ section.settings.hero_text_content__max_width }};
       color:{{ section.settings.text_color }};
     "
   >
@@ -193,6 +193,7 @@
       "min": 0,
       "max": 200,
       "step": 10,
+      "unit": "vh",
       "default": 50
     },
     {
@@ -202,6 +203,7 @@
       "min": 100,
       "max": 1200,
       "step": 10,
+      "unit": "px",
       "default": 600
     },
     {
