@@ -4,9 +4,19 @@
     background-image:url({{ section.settings.background_image }})
     background-size:{{ section.settings.background_size }};
     background-position:{{ section.settings.background_position }};
+    height:{{ section.settings.hero_text_content__height }}
+
+    align-items:{{section.settings.align-items}};
+    justify-content:{{section.settings.justify-content}};
   "
 >
-  <div class="hero-text-content hero-text-content--{{section.settings.text_position}}">
+  <div
+    class="hero-text-content "
+    style="
+      width:'100%';
+      max-width:{{ section.settings.hero_text_content__max_width }};
+    "
+  >
     <h1 class="hero-heading">{{ section.settings.heading }}</h1>
     <p class="hero-subheading">{{ section.settings.subheading }}</p>
     {% if section.settings.button_text != blank %}
@@ -25,6 +35,66 @@
     {% endif %}
   </div>
 </section>
+
+<style>
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #000;
+    text-align: left;
+  }
+
+  .hero-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    font-family: 'Jost';
+  }
+  .hero-text-content h1,
+  .hero-text-content p,
+  .hero-text-content a {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+  }
+
+  .hero-heading {
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: 0px;
+  }
+
+  .hero-subheading {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+  }
+
+  .hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #000;
+    text-decoration: none;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-weight: 400;
+    line-height: 20.48px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .hero-button-icon {
+    max-width: 24px;
+    height: auto;
+    width: 100%;
+  }
+</style>
 
 {% schema %}
 {
@@ -76,44 +146,40 @@
     },
     {
       "type": "select",
-      "id": "text_position",
-      "label": "Text Position",
+      "id": "align-items",
+      "label": "Align Items",
       "options": [
         {
-          "value": "top-center",
-          "label": "Top Center"
+          "value": "flex-start",
+          "label": "Top"
         },
         {
           "value": "center",
           "label": "Center"
         },
         {
-          "value": "bottom-center",
-          "label": "Bottom Center"
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "justify-content",
+      "label": "Justify Content",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
         },
         {
-          "value": "top-left",
-          "label": "Top Left"
+          "value": "center",
+          "label": "Center"
         },
         {
-          "value": "top-right",
-          "label": "Top Right"
-        },
-        {
-          "value": "center-left",
-          "label": "Center Left"
-        },
-        {
-          "value": "center-right",
-          "label": "Center Right"
-        },
-        {
-          "value": "bottom-left",
-          "label": "Bottom Left"
-        },
-        {
-          "value": "bottom-right",
-          "label": "Bottom Right"
+          "value": "flex-end",
+          "label": "Bottom"
         }
       ],
       "default": "center"
