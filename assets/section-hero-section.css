@@ -34,11 +34,13 @@
 }
 
 .hero-button {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
   gap: 10px;
-  padding: 10px 20px;
-  background-color: #000;
+  padding: 10px 30px;
   text-decoration: none;
   border-radius: 0;
   font-size: 16px;
