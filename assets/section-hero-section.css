@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   text-align: left;
-  padding: 50px;
+  padding: 0 50px;
   background-repeat: no-repeat;
 }
 
@@ -20,6 +20,8 @@
 
 /* Content stays above overlay */
 .hero-text-content {
+
+  padding: 50px 0;
   position: relative;
   width: 100%;
   display: flex;
@@ -87,12 +89,15 @@
   ========================= */
 @media (max-width: 749px) {
   .hero-section {
-    padding: 20px;
+    padding: 0 20px;
+    justify-content: center !important;
+    align-items: flex-start !important;
   }
 
   .hero-text-content {
     text-align: center;
     align-items: center;
+    padding: 20px 0;
   }
 
   .hero-heading {

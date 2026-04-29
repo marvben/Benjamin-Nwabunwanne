@@ -63,6 +63,7 @@
     max-width: {{ section.settings.hero_text_content__max_width }}px;
     min-height:{{ section.settings.desktop_hero_text_min__height }}px;
     color: {{ section.settings.text_color }};
+    background:{{ section.settings.text-content_background_color }};
   }
 
   .hero-heading {
@@ -243,6 +244,12 @@
         { "value": "flex-end", "label": "Right" }
       ],
       "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "text-content_background_color",
+      "label": "Text Content Background",
+      "default": "rgba(255, 255, 255, 0.5)"
     },
     {
       "type": "color",
