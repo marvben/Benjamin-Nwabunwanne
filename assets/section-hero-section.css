@@ -42,7 +42,7 @@
   line-height: 140%;
 }
 
-.hero-button {
+.hero-text-content a.hero-button {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -61,11 +61,11 @@
   transition: opacity 0.3s ease;
 }
 
-.hero-button:hover {
+.hero-text-content a.hero-button:hover {
   opacity: 0.85;
 }
 
-.hero-button-icon {
+.hero-text-content .hero-button-icon {
   max-width: 24px;
   height: auto;
   width: 100%;
