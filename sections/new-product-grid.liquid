@@ -12,7 +12,7 @@
       {% for product in products %}
         {% if product.featured_image %}
           <div class="new-product-grid-item">
-            <h3 class="product-title">{{ product.title }}</h3>
+            <h3 class="product-title">Heading {{ product.title }}</h3>
             <img
               src="{{ product.featured_image | image_url: width: 500 | image_tag:alt: product.title, loading: 'lazy' }}"
               width="{{ product.featured_image.width }}"
