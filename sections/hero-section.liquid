@@ -48,10 +48,10 @@
     align-items: {{ section.settings.align_items }};
     justify-content: {{ section.settings.justify_content }};
     min-height: {{ section.settings.hero_height_desktop }}vh;
+    background-color:{{ section.settings.background_color }};
     {% if section.settings.desktop_background_image != blank %}
       background-image: url('{{ section.settings.desktop_background_image | image_url: width: 2000 }}');
     {% endif %}
-    background-color:{{ section.settings.background_color }};
     background-size: {{ section.settings.background_size }};
     background-position: {{ section.settings.background_position }};
   }
