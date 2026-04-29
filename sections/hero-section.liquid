@@ -45,10 +45,8 @@
      DESKTOP STYLES
   ========================= */
   .hero-section {
-    display: flex;
     align-items: {{ section.settings.align_items }};
     justify-content: {{ section.settings.justify_content }};
-    position: relative;
     min-height: {{ section.settings.hero_height_desktop }}vh;
     {% if section.settings.desktop_background_image != blank %}
       background-image: url('{{ section.settings.desktop_background_image | image_url: width: 2000 }}');
@@ -58,24 +56,12 @@
   }
 
   .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
-    z-index: 1;
   }
 
   .hero-text-content {
-    position: relative;
-    z-index: 2;
     max-width: {{ section.settings.hero_text_content__max_width }}px;
     min-height:{{ section.settings.desktop_hero_text_min__height }}px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
     color: {{ section.settings.text_color }};
   }
 
@@ -90,21 +76,7 @@
   .hero-button {
     background-color: {{ section.settings.button_background_color }};
     color: {{ section.settings.button_text_color }};
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: opacity 0.3s ease;
-  }
 
-  .hero-button:hover {
-    opacity: 0.9;
-  }
-
-  .hero-button-icon {
-    flex-shrink: 0;
   }
 
   .hero-notice {
@@ -119,8 +91,6 @@
   ========================= */
   @media (max-width: 749px) {
     .hero-section {
-      padding: 20px;
-
         {% if section.settings.mobile_background_image != blank %}
       background-image: url('{{ section.settings.mobile_background_image | image_url: width: 2000 }}');
         background-position: {{ section.settings.background_position_mobile }};
@@ -129,24 +99,10 @@
     }
 
     .hero-text-content {
-      text-align: center;
-      align-items: center;
       min-height:{{ section.settings.mobile_hero_text_min__height }}px;
     }
 
-    .hero-heading {
-      font-size: 32px;
-      line-height: 1.2;
-    }
 
-    .hero-subheading {
-      font-size: 16px;
-    }
-
-    .hero-button {
-      justify-content: center;
-      margin-top: auto;
-    }
   }
 </style>
 {% schema %}

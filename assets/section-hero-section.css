@@ -11,7 +11,11 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  display: block !important
+  display: block !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /* Content stays above overlay */
@@ -74,4 +78,34 @@
   max-width: 24px;
   height: auto;
   width: 100%;
+  flex-shrink: 0;
+}
+
+
+/* =========================
+     MOBILE OPTIMIZATION
+  ========================= */
+@media (max-width: 749px) {
+  .hero-section {
+    padding: 20px;
+  }
+
+  .hero-text-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-heading {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-subheading {
+    font-size: 16px;
+  }
+
+  .hero-button {
+    justify-content: center;
+    margin-top: auto;
+  }
 }
