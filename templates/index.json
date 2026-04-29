@@ -44,20 +44,20 @@
         "hero_notice_text_align": "center"
       }
     },
-    "new_product_grid_y79AMx": {
+    "new_product_grid_fXJxbT": {
       "type": "new-product-grid",
       "name": "New Product Grid",
       "settings": {
-        "section_heading": "Tisso vison in the wild",
+        "section_heading": "New Arrivals",
         "collection": "featured-products",
         "products_to_show": 6,
-        "columns_desktop": "3",
-        "columns_mobile": "2"
+        "columns_desktop": "4",
+        "columns_mobile": "1"
       }
     }
   },
   "order": [
     "hero_section_nffCFA",
-    "new_product_grid_y79AMx"
+    "new_product_grid_fXJxbT"
   ]
 }
