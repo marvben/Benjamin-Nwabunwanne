@@ -10,7 +10,7 @@
     >
       {% assign products = collection.products | slice: 0, section.settings.products_to_show %}
       {% for product in products %}
-        {% if product.featured_image %}
+        {% if product.featured_image != blank %}
           <div class="new-product-grid-item">
             <h3 class="product-title">Heading {{ product.title }}</h3>
             <img
