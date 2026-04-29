@@ -36,6 +36,7 @@
         "button_link": "",
         "button_background_color": "#000000",
         "button_text_color": "#ffffff",
+        "button_icon": "shopify://shop_images/Line_15.png",
         "hero_notice": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL",
         "hero_notice_background": "#f5f5f5",
         "hero_notice_text_color": "#000000",
