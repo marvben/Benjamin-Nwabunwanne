@@ -1,28 +1,42 @@
 {{ 'new-product-grid-section.css' | asset_url | stylesheet_tag }}
 {% if section.settings.collection != blank %}
-  {% if section.settings.section_heading != blank %}
-    <h2 class="new-product-grid-heading">{{ section.settings.section_heading }}</h2>
-  {% endif %}
-  <div
-    class="new-products-grid-wrapper"
-    style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};"
-  >
-    {% assign products = section.settings.collection.products | slice: 0, section.settings.products_to_show %}
-    {% for product in products %}
-      {% if product.featured_image %}
-        <div class="new-product-grid-item">
-          <img
-            src="{{ product.featured_image | image_url: width: 500 | image_tag:alt: product.title, loading: 'lazy' }}"
-            width="{{ product.featured_image.width }}"
-            height="{{ product.featured_image.height }}"
-            style="width:100%"
-          >
-        </div>
-        <i class="product-button"></i>
-      {% endif %}
-    {% endfor %}
+  <div class="new-product-grid-section">
+    {% if section.settings.section_heading != blank %}
+      <h2 class="new-product-grid-heading">{{ section.settings.section_heading }}</h2>
+    {% endif %}
+    <div
+      class="new-products-grid-wrapper"
+      style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};"
+    >
+      {% assign products = section.settings.collection.products | slice: 0, section.settings.products_to_show %}
+      {% for product in products %}
+        {% if product.featured_image %}
+          <div class="new-product-grid-item">
+            <img
+              src="{{ product.featured_image | image_url: width: 500 | image_tag:alt: product.title, loading: 'lazy' }}"
+              width="{{ product.featured_image.width }}"
+              height="{{ product.featured_image.height }}"
+              style="width:100%"
+            >
+          </div>
+          <i class="product-button"></i>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 {% endif %}
+
+<style>
+  .new-products-grid-wrapper {
+    grid-template-columns: repeat(var(--columns-desktop), 1fr);
+  }
+  @media (max-width: 749px) {
+    .new-products-grid-wrapper {
+      grid-template-columns: repeat(var(--columns-mobile), 1fr);
+      padding: 50px 20px;
+    }
+  }
+</style>
 
 {% schema %}
 {
