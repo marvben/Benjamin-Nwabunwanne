@@ -1,0 +1,70 @@
+{{ 'new-product-grid-section.css' | asset_url | stylesheet_tag }}
+{% if section.settings.collection != blank %}
+  {% if section.settings.section_heading != blank %}
+    <h2 class="new-product-grid-heading">{{ section.settings.section_heading }}</h2>
+  {% endif %}
+  <div
+    class="new-products-grid-wrapper"
+    style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};"
+  >
+    {% assign products = section.settings.collection.products | slice: 0, section.settings.products_to_show %}
+    {% for product in products %}
+      {% if product.featured_image %}
+        <div class="new-product-grid-item">
+          <img
+            src="{{ product.featured_image | image_url: width: 500 | image_tag:alt: product.title, loading: 'lazy' }}"
+            width="{{ product.featured_image.width }}"
+            height="{{ product.featured_image.height }}"
+            style="width:100%"
+          >
+        </div>
+        <i class="product-button"></i>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "New Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "New Arrivals"
+    },
+    { "type": "collection", "id": "collection", "label": "Select Collection" },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Number of Products to Show",
+      "default": 6,
+      "min": 3,
+      "max": 24
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on Desktop",
+      "options": [
+        { "value": "2", "label": "Two" },
+        { "value": "3", "label": "Three" },
+        { "value": "4", "label": "Four" },
+        { "value": "5", "label": "Five" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on Mobile",
+      "options": [
+        { "value": "1", "label": "One" },
+        { "value": "2", "label": "Two" }
+      ],
+      "default": "1"
+    }
+  ]
+}
+{% endschema %}
