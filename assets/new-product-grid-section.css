@@ -5,7 +5,7 @@
 .new-products-grid-wrapper {
   display: grid;
   gap: 10px;
-
+  grid-template-columns: repeat(var(--columns-desktop), 1fr);
 }
 
 .new-product-grid-item {
@@ -43,6 +43,16 @@
   text-align: center;
 }
 
+.no-products-message {
+  font-family: "Lustria";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: center;
+  color: crimson
+}
+
 @media (max-width: 749px) {
   .new-product-grid-section {
     padding: 50px 20px;
@@ -51,4 +61,11 @@
   .new-product-grid-heading {
     font-size: 28px;
   }
+
+  .new-products-grid-wrapper {
+    grid-template-columns: repeat(var(--columns-mobile), 1fr);
+    padding: 50px 20px;
+  }
+
+
 }
