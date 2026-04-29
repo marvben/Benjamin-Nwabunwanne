@@ -51,6 +51,7 @@
     {% if section.settings.desktop_background_image != blank %}
       background-image: url('{{ section.settings.desktop_background_image | image_url: width: 2000 }}');
     {% endif %}
+    background-color:{{ section.settings.background_color }};
     background-size: {{ section.settings.background_size }};
     background-position: {{ section.settings.background_position }};
   }
@@ -110,6 +111,12 @@
 {
   "name": "Hero Section",
   "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
     {
       "type": "image_picker",
       "id": "desktop_background_image",
