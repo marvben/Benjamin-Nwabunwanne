@@ -50,8 +50,8 @@
     justify-content: {{ section.settings.justify_content }};
     position: relative;
     min-height: {{ section.settings.hero_height_desktop }}vh;
-    {% if section.settings.background_image != blank %}
-      background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}');
+    {% if section.settings.desktop_background_image != blank %}
+      background-image: url('{{ section.settings.desktop_background_image | image_url: width: 2000 }}');
     {% endif %}
     background-size: {{ section.settings.background_size }};
     background-position: {{ section.settings.background_position }};
@@ -120,7 +120,11 @@
   @media (max-width: 749px) {
     .hero-section {
       padding: 20px;
-      background-position: {{ section.settings.background_position_mobile }};
+
+        {% if section.settings.mobile_background_image != blank %}
+      background-image: url('{{ section.settings.mobile_background_image | image_url: width: 2000 }}');
+        background-position: {{ section.settings.background_position_mobile }};
+      {% endif %}
       min-height: {{ section.settings.hero_height_mobile }}vh;
     }
 
@@ -140,8 +144,8 @@
     }
 
     .hero-button {
-      width: 100%;
       justify-content: center;
+      margin-top: auto;
     }
   }
 </style>
@@ -151,8 +155,13 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "background_image",
-      "label": "Background Image"
+      "id": "desktop_background_image",
+      "label": "Desktop Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Mobile Background Image"
     },
     {
       "type": "select",
