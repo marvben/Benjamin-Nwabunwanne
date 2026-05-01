@@ -119,8 +119,8 @@
   .hero-text-content {
     width: 100%;
     max-width: 100%;
-    text-align: center;
-    align-items: center;
+    text-align: center !important;
+    align-items: center !important;
     justify-content: flex-start;
     padding: 30px 20px;
   }
