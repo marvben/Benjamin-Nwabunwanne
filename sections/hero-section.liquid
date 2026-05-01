@@ -17,7 +17,7 @@
       </p>
 
       {% if section.settings.button_text != blank %}
-        <a href="{{ section.settings.button_link }}" class="hero-button">
+        <a href="{{ section.settings.button_link }}" class="hero-button for-desktop">
           {{ section.settings.button_text }}
 
           {% if section.settings.button_icon != blank %}
@@ -32,6 +32,22 @@
         </a>
       {% endif %}
     </div>
+
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="hero-button for-mobile">
+        {{ section.settings.button_text }}
+
+        {% if section.settings.button_icon != blank %}
+          <img
+            class="hero-button-icon"
+            src="{{ section.settings.button_icon | image_url: width: 24 }}"
+            width="24"
+            height="24"
+            alt="Button Icon"
+          >
+        {% endif %}
+      </a>
+    {% endif %}
   </div>
   >
 </div>

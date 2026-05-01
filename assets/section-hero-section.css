@@ -24,6 +24,7 @@
   display: flex;
   text-align: left;
   padding: 0 50px;
+  width: 100%;
 }
 
 /* Content stays above overlay */
@@ -61,7 +62,6 @@
 }
 
 .hero-text-content a.hero-button {
-  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -77,6 +77,15 @@
   text-align: center;
   text-transform: uppercase;
   transition: opacity 0.3s ease;
+  margin-top: auto;
+}
+
+.hero-text-content a.hero-button.for-desktop {
+  display: inline-flex;
+}
+
+.hero-text-content a.hero-button.for-mobile {
+  display: none;
 }
 
 .hero-text-content a.hero-button:hover {
@@ -102,8 +111,10 @@
   }
 
   .hero-text-content {
+    width: 100%;
     text-align: center;
     align-items: center;
+    justify-content: flex-start;
     padding: 30px 20px;
   }
 
@@ -119,5 +130,13 @@
   .hero-button {
     justify-content: center;
     margin-top: auto;
+  }
+
+  .hero-text-content a.hero-button.for-desktop {
+    display: none
+  }
+
+  .hero-text-content a.hero-button.for-mobile {
+    display: inline-flex;
   }
 }
