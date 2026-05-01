@@ -11,16 +11,17 @@
       {% assign products = section.settings.collection.products %}
       {% if products.size > 0 %}
         {% for product in products limit: section.settings.products_to_show %}
-          <h3 class="product-title">Heading {{ product.title }}</h3>
           {% if product.featured_image != blank %}
             <div class="new-product-grid-item">
-              <h3 class="product-title">Heading {{ product.title }}</h3>
-              <img
-                src="{{ product.featured_image | image_url: width: 500 | image_tag:alt: product.title, loading: 'lazy' }}"
-                width="{{ product.featured_image.width }}"
-                height="{{ product.featured_image.height }}"
-                style="width:100%"
-              >
+              {{
+                product.featured_image
+                | image_url: width: 500
+                | image_tag:
+                  alt: product.title,
+                  loading: 'lazy',
+                  width: product.featured_image.width,
+                  height: product.featured_image.height
+              }}
             </div>
             <i class="product-button"></i>
           {% endif %}
