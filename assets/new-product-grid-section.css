@@ -21,6 +21,10 @@
   margin-bottom: 20px;
 }
 
+.new-product-image {
+  object-fit: cover;
+}
+
 .product-button {
   display: inline-block;
   width: 22px;
