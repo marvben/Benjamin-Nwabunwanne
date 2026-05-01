@@ -140,10 +140,10 @@
   }
 
   .hero-text-content a.hero-button.for-desktop {
-    display: none
+    display: none !important;
   }
 
   .hero-text-content a.hero-button.for-mobile {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 }
