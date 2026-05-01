@@ -5,33 +5,35 @@
 <div class="hero-section">
   <!-- Overlay -->
   <div class="hero-overlay"></div>
+  <div class="hero-content-wrapper">
+    <!-- Content -->
+    <div class="hero-text-content">
+      <h1 class="hero-heading">
+        {{ section.settings.heading }}
+      </h1>
 
-  <!-- Content -->
-  <div class="hero-text-content">
-    <h1 class="hero-heading">
-      {{ section.settings.heading }}
-    </h1>
+      <p class="hero-subheading">
+        {{ section.settings.subheading }}
+      </p>
 
-    <p class="hero-subheading">
-      {{ section.settings.subheading }}
-    </p>
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="hero-button">
+          {{ section.settings.button_text }}
 
-    {% if section.settings.button_text != blank %}
-      <a href="{{ section.settings.button_link }}" class="hero-button">
-        {{ section.settings.button_text }}
-
-        {% if section.settings.button_icon != blank %}
-          <img
-            class="hero-button-icon"
-            src="{{ section.settings.button_icon | image_url: width: 24 }}"
-            width="24"
-            height="24"
-            alt="Button Icon"
-          >
-        {% endif %}
-      </a>
-    {% endif %}
+          {% if section.settings.button_icon != blank %}
+            <img
+              class="hero-button-icon"
+              src="{{ section.settings.button_icon | image_url: width: 24 }}"
+              width="24"
+              height="24"
+              alt="Button Icon"
+            >
+          {% endif %}
+        </a>
+      {% endif %}
+    </div>
   </div>
+  >
 </div>
 
 {% if section.settings.hero_notice != blank %}
@@ -45,9 +47,6 @@
      DESKTOP STYLES
   ========================= */
   .hero-section {
-    align-items: {{ section.settings.align_items }};
-    justify-content: {{ section.settings.justify_content }};
-    min-height: {{ section.settings.hero_height_desktop }}vh;
     background-color:{{ section.settings.background_color }};
     {% if section.settings.desktop_background_image != blank %}
       background-image: url('{{ section.settings.desktop_background_image | image_url: width: 2000 }}');
@@ -58,6 +57,12 @@
 
   .hero-overlay {
     background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+  }
+
+  .hero-content-wrapper{
+    align-items: {{ section.settings.align_items }};
+    justify-content: {{ section.settings.justify_content }};
+    min-height: {{ section.settings.hero_height_desktop }}vh;
   }
 
   .hero-text-content {

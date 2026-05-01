@@ -1,5 +1,7 @@
 .new-product-grid-section {
-  padding: 100px 50px 50px
+  padding: 100px 50px 50px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .new-products-grid-wrapper {
@@ -8,9 +10,7 @@
   grid-template-columns: repeat(var(--columns-desktop), 1fr);
 }
 
-.new-product-grid-item {
-  position: relative;
-}
+
 
 .new-product-grid-heading {
   font-family: "Lustria";
@@ -19,6 +19,10 @@
   font-size: 36px;
   line-height: 120%;
   margin-bottom: 20px;
+}
+
+.new-product-grid-item {
+  position: relative;
 }
 
 .new-product-image {
