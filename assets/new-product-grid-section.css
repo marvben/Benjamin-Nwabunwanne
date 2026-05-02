@@ -78,5 +78,10 @@
     height: 190px;
   }
 
+.product-button {
+  width: 15px;
+  height: 15px;
+}
+
 
 }
