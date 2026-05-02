@@ -153,7 +153,7 @@
   flex-grow:1;
   height:140px;
   width:120px;
-  overflow:hidded
+  overflow:hidden;
 }
 .product-quick-view__content-image-wrapper img{
   width:100%;
@@ -162,12 +162,14 @@
 }
 
 .product-quick-view__content-text-wrapper{
+  max-width:150px;
   text-align:left;
   display:flex;
   flex-direction:column;
-  gap: 30px;
   justify-content: flex-end;
   align-items: flex-start;
+  gap: 20px;
+  flex-shrink:1;
   font-weight: 300;
   font-family: 'jost';
 }
