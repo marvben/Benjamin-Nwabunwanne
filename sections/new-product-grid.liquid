@@ -130,6 +130,7 @@
       </div>
     </div>
   </form>
+  <span class="product-quick-view__close-button"></span>
 </div> 
 
 <style>
@@ -140,7 +141,8 @@
   max-width:310px;
   max-height:450px;
   overflow:auto;
-  padding:20px
+  padding:20px;
+  position:relative
 }
 
 .product-quick-view__content{
@@ -213,6 +215,15 @@ gap:20px
 }
 .product-quick-view__button-icon img{
 width:100%;
+}
+
+.product-quick-view__close-button{
+  position:absolute;
+  top:10px;
+  right:10px;
+  display:inline-block;
+  background:red;
+  z-index:100
 }
 
 </style>
