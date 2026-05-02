@@ -25,13 +25,13 @@
   text-align: left;
   padding: 0 50px;
   width: 100%;
+  max-width: 1440px;
 }
 
 /* Content stays above overlay */
 .hero-text-content {
   padding: 50px 0;
   width: 100%;
-  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -62,6 +62,7 @@
 }
 
 .hero-text-content a.hero-button {
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -80,14 +81,6 @@
   margin-top: auto;
 }
 
-.hero-text-content a.hero-button.for-desktop {
-  display: inline-flex;
-}
-
-.hero-text-content a.hero-button.for-mobile {
-  display: none;
-}
-
 .hero-text-content a.hero-button:hover {
   opacity: 0.85;
 }
@@ -98,6 +91,12 @@
   width: 100%;
   flex-shrink: 0;
 }
+
+
+.hero-text-content a.hero-button.for-mobile {
+  display: none;
+}
+
 
 
 /* =========================
@@ -144,6 +143,6 @@
   }
 
   .hero-text-content a.hero-button.for-mobile {
-    display: inline-flex !important;
+    display: inline-flex;
   }
 }

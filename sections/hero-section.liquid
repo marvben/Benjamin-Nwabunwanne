@@ -18,38 +18,26 @@
 
       {% if section.settings.button_text != blank %}
         <a href="{{ section.settings.button_link }}" class="hero-button for-desktop">
-          {{ section.settings.button_text }}
+          <span> {{ section.settings.button_text }} </span>
 
           {% if section.settings.button_icon != blank %}
-            <img
-              class="hero-button-icon"
-              src="{{ section.settings.button_icon | image_url: width: 24 }}"
-              width="24"
-              height="24"
-              alt="Button Icon"
-            >
+            section.settings.button_icon | image_url: width: 24 | image_tag: alt: section.settings.button_text, loading:
+            'lazy',class: 'hero-button-icon'
           {% endif %}
         </a>
       {% endif %}
     </div>
 
     {% if section.settings.button_text != blank %}
-      <a href="{{ section.settings.button_link }}" class="hero-button for-mobile">
-        {{ section.settings.button_text }}
-
+      <a href="{{ section.settings.button_link }}" class="hero-button for-desktop">
+        <span> {{ section.settings.button_text }} </span>
         {% if section.settings.button_icon != blank %}
-          <img
-            class="hero-button-icon"
-            src="{{ section.settings.button_icon | image_url: width: 24 }}"
-            width="24"
-            height="24"
-            alt="Button Icon"
-          >
+          section.settings.button_icon | image_url: width: 24 | image_tag: alt: section.settings.button_text, loading:
+          'lazy', class: 'hero-button-icon'
         {% endif %}
       </a>
     {% endif %}
   </div>
-  >
 </div>
 
 {% if section.settings.hero_notice != blank %}
