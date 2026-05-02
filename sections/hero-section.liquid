@@ -21,8 +21,11 @@
           <span> {{ section.settings.button_text }} </span>
 
           {% if section.settings.button_icon != blank %}
-            section.settings.button_icon | image_url: width: 24 | image_tag: alt: section.settings.button_text, loading:
-            'lazy',class: 'hero-button-icon'
+            {{
+              section.settings.button_icon
+              | image_url: width: 24
+              | image_tag: alt: section.settings.button_text, loading: 'lazy', class: 'hero-button-icon'
+            }}
           {% endif %}
         </a>
       {% endif %}
@@ -32,8 +35,11 @@
       <a href="{{ section.settings.button_link }}" class="hero-button for-desktop">
         <span> {{ section.settings.button_text }} </span>
         {% if section.settings.button_icon != blank %}
-          section.settings.button_icon | image_url: width: 24 | image_tag: alt: section.settings.button_text, loading:
-          'lazy', class: 'hero-button-icon'
+          {{
+            section.settings.button_icon
+            | image_url: width: 24
+            | image_tag: alt: section.settings.button_text, loading: 'lazy', class: 'hero-button-icon'
+          }}
         {% endif %}
       </a>
     {% endif %}
