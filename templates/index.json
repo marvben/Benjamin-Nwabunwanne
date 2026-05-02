@@ -15,11 +15,12 @@
       "settings": {
         "background_color": "#ffffff",
         "desktop_background_image": "shopify://shop_images/Group_1000008197.png",
+        "mobile_background_image": "shopify://shop_images/Frame_1958.jpg",
         "background_size": "cover",
         "background_position": "left bottom",
         "background_position_mobile": "center center",
         "hero_height_desktop": 80,
-        "hero_height_mobile": 60,
+        "hero_height_mobile": 50,
         "overlay_opacity": 0,
         "hero_text_content__max_width": 500,
         "desktop_hero_text_min__height": 300,
