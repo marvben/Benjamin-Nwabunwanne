@@ -40,9 +40,9 @@
   background-size: cover;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translatex(-50%);
   color: #000;
   cursor: pointer;
 }
