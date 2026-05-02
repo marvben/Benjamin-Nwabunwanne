@@ -225,17 +225,28 @@ width:100%;
   width:20px;
   height:20px;
   background:red;
+  transform:rotate(45deg)
   z-index:100
 }
 
-.product-quick-view__close-button::before{
+.product-quick-view__close-button::before,
+.product-quick-view__close-button::after{
   content:"";
   position:absolute;
+  background:#000;
+}
+
+.product-quick-view__close-button::before{
   width:100%;
   height:2px;
-  background:#000;
   top:50%;
   transform:translatey(-50%)
+}
+.product-quick-view__close-button::after{
+  width:2px;
+  height:100%;
+  left:50%;
+  transform:translatex(-50%)
 }
 
 </style>
