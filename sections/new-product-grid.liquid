@@ -95,8 +95,8 @@
     height="100%" width="100%">
     </div>
     <div class="product-quick-view__content-text-wrapper">
-      <span class="product-quick-view__content-text-title">Orange Wide Leg</span>
-      <h4 class="product-quick-view__content-text-price">980,00€</h4>
+      <h4 class="product-quick-view__content-text-title">Orange Wide Leg</h4>
+      <span class="product-quick-view__content-text-price">980,00€</span>
       <p class="product-quick-view__content-text-desc">This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
     </div>
   </div>
@@ -158,13 +158,30 @@
   gap: 30px;
   justify-content: flex-end;
   align-items: flex-start;
+  font-weight: 300;
+  font-family: 'jost';
 }
 
-.product-quick-view__content-text-wrapper span,
-.product-quick-view__content-text-wrapper h4,
-.product-quick-view__content-text-wrapper p{
+.product-quick-view__content-text-title,
+.product-quick-view__content-text-price,
+.product-quick-view__content-text-desc{
   margin:0;
-  line-height:1
+}
+
+.product-quick-view__content-text-title{
+  font-size:16px;
+  line-height: 1.2;
+}
+.product-quick-view__content-text-price{
+font-family: Lustria;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.2;
+}
+.product-quick-view__content-text-desc{
+font-size: 14px;
+line-height: 1;
+letter-spacing: -1%;
 }
 
 </style>
