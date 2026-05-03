@@ -70,21 +70,19 @@
   
 
   function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
-            //alert(options[0].name)
 
-        alert(variants[0].title);
 
         return `
         <div class="product-quick-view__container">
   <div class="product-quick-view__content">
     <div class="product-quick-view__content-image-wrapper">
     <img src=${featured_image} class="product-quick-view__content-image" 
-    height="100%" width="100%">
+    height="100%" width="100%" alt=${title}>
     </div>
     <div class="product-quick-view__content-text-wrapper">
-      <h4 class="product-quick-view__content-text-title">Orange Wide Leg</h4>
-      <span class="product-quick-view__content-text-price">980,00€</span>
-      <p class="product-quick-view__content-text-desc">This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+      <h4 class="product-quick-view__content-text-title">${title}</h4>
+      <span class="product-quick-view__content-text-price">${price/100}€</span>
+      <p class="product-quick-view__content-text-desc">${description}</p>
     </div>
   </div>
   <form id="product-quick-view-form" class="product-quick-view__form">
