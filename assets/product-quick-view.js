@@ -11,7 +11,8 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         quickViewPopup.classList.add('active');
         quickViewContainer.innerHTML = "<p>Loading...</p>"
         const productUrl = quickViewButton.dataset.productLink
-        await openQuickView(productUrl) 
+        await openQuickView(productUrl);
+        animateColorBackground();
     })
   });
 
@@ -28,7 +29,8 @@ async function openQuickView(handle) {
 }
 
 
-const group = document.querySelector(".radio-group");
+function animateColorBackground(){
+    const group = document.querySelector(".radio-group");
 const slider = group.querySelector(".slider");
 const labels = group.querySelectorAll("label");
 
@@ -48,3 +50,4 @@ labels.forEach(label => {
   label.addEventListener("mouseenter", () => moveSlider(label));
   label.addEventListener("click", () => moveSlider(label));
 });
+}
