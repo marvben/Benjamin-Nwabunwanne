@@ -13,7 +13,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         quickViewContainer.innerHTML = "<p>Loading...</p>"
 
         const res = await axios.get(productUrl);
-        const secT = await axios.get(productUrl + '?view=quick-view')
+        const secT = await axios.get(quickViewButton.dataset.productLink + '?view=quick-view')
         quickViewContainer.innerHTML =secT.data; // await quickViewPopupTemplate(res.data);
         const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
        if(quickViewCloseButton) {
