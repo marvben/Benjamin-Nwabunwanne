@@ -71,7 +71,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
  const optionsTemplate = options.map(option => {
   return `
     <div class="product-quick-view__options">
-      <label class="product-quick-view__option">
+      <label class="product-quick-view__option" id=${option.name} >
         ${option.name}
       </label>
 
