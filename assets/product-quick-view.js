@@ -11,8 +11,8 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         quickViewContainer.innerHtml = "Loading..."
         const res = await axios.get(productUrl) 
         quickViewContainer.innerHtml =  quickViewPopupTemplate(res.data);
-        quickViewCloseButton.addEventListener('click', => quickViewPopup.classList.remove('active'));
-        quickViewPopupOverlay.addEventListener('click, => quickViewPopup.classList.remove('active'))
+        quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'));
+        quickViewPopupOverlay.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
   
          
 
@@ -64,7 +64,6 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
 
         return `
-        <div class="product-quick-view__container">
   <div class="product-quick-view__content">
     <div class="product-quick-view__content-image-wrapper">
     <img src=${featured_image} class="product-quick-view__content-image" 
@@ -109,7 +108,6 @@ const quickViewButtons = document.querySelectorAll('.product-button');
     
   </form>
   <span class="product-quick-view__close-button"></span>
-</div>
         `
   }
  
