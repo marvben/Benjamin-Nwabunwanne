@@ -11,7 +11,6 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         quickViewPopup.classList.add('active');
         quickViewContainer.innerHTML = "<p>Loading...</p>"
         const productUrl = quickViewButton.dataset.productLink
-
         await openQuickView(productUrl) 
 
         
