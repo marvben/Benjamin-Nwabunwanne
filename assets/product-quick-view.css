@@ -107,59 +107,14 @@ line-height: 1;
   flex-grow: 1;
 }
 
-.product-quick-view__options label{
+.product-quick-view__options .option-label{
 font-size: 14px;
 line-height: 130%;
 letter-spacing: 0%;
 
 }
 
-/* hide native radio */
-.product-quick-view__options input[type="radio"] {
-  display: none;
-}
 
-/* label as button */
-.product-quick-view__options label {
-  position: relative;
-  display: inline-block;
-  padding: 10px 16px;
-  margin: 5px;
-  border: 1px solid #ddd;
-  cursor: pointer;
-  border-radius: 6px;
-  overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-/* background layer */
-.product-quick-view__options label::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: black;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-  z-index: 0;
-}
-
-/* text above background */
-.product-quick-view__options label {
-  color: #000;
-  z-index: 1;
-}
-
-/* checked state */
-.product-quick-view__options input[type="radio"]:checked + label {
-  color: #fff;
-  border-color: black;
-}
-
-/* animate background on checked */
-.product-quick-view__options input[type="radio"]:checked + label::before {
-  transform: scaleX(1);
-}
 
 .product-quick-view__button{
     margin-top:auto;

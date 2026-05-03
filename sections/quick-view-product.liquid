@@ -31,7 +31,7 @@
 
       <!-- SIZE -->
       <div class="product-quick-view__options">
-        <label>Size</label>
+        <span class="option-label">Color</span>
         <select name="id">
           {% for variant in product.variants %}
             {% if variant.available %}
@@ -45,8 +45,7 @@
 
       <!-- COLOR (display only, Shopify handles via variant) -->
       <div class="product-quick-view__options">
-        <label>Color</label>
-        <div>
+        <span class="option-label">Color</span>
           {% assign colors = product.options_by_name['Color'].values %}
           {% for color in colors %}
             <label>
@@ -54,7 +53,6 @@
               {{ color }}
             </label>
           {% endfor %}
-        </div>
         </div>
 
       <!-- ADD TO CART -->
