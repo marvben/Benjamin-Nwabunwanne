@@ -2,11 +2,6 @@ const quickViewButtons = document.querySelectorAll('.product-button');
   const quickViewPopup = document.querySelector('.product-quick-view__popup');
   const quickViewPopupOverlay  = document.querySelector('.product-quick-view__popup-overlay');
   const quickViewContainer = document.querySelector('.product-quick-view__container');
-  let selectedOptions = {
-  Size: null,
-  Color: null
-};
-let productData = null;
  
 
   quickViewButtons.forEach(quickViewButton => {
@@ -18,9 +13,7 @@ let productData = null;
         quickViewContainer.innerHTML = "<p>Loading...</p>"
 
         const res = await axios.get(productUrl);
-        productData = res.data
-        quickViewContainer.innerHTML = await quickViewPopupTemplate(productData);
-        attachQuickViewEvents()
+        quickViewContainer.innerHTML = await quickViewPopupTemplate(res.data);
         const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
        if(quickViewCloseButton) {
             quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
@@ -71,7 +64,8 @@ let productData = null;
     })
   });
 
-  
+
+
 function quickViewPopupTemplate({ id, title, description, price, featured_image, options, variants }) {
 
 const optionsTemplate = options.map(option => {
@@ -143,86 +137,3 @@ return `
   <span class="product-quick-view__close-button"></span>
 `;
 }
-
-
-function attachQuickViewEvents() {
-
-  // SIZE
-  document.addEventListener('change', (e) => {
-    if (e.target.name === 'size') {
-      selectedOptions.Size = e.target.value;
-      updateVariant();
-    }
-  });
-
-  // COLOR (radio style)
-  document.addEventListener('change', (e) => {
-    if (e.target.name === 'color') {
-      selectedOptions.Color = e.target.value;
-      updateVariant();
-    }
-  });
-
-  // ADD TO CART
-  document.getElementById('quick-view-form')
-    .addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const id = document.querySelector('input[name="id"]').value;
-
-      await axios.post('/cart/add.js', {
-        id: id,
-        quantity: 1
-      });
-
-      alert('Added to cart!');
-    });
-}
-
-function updateVariant() {
-
-  if (!productData) return;
-
-  const variant = productData.variants.find(v => {
-    return (
-      v.option1 === selectedOptions.Size &&
-      v.option2 === selectedOptions.Color
-    );
-  });
-
-  if (variant) {
-    document.querySelector('input[name="id"]').value = variant.id;
-  }
-}
-
-document.addEventListener('submit', async (e) => {
-  if (e.target.id !== 'quick-view-form') return;
-
-  e.preventDefault();
-
-  const idInput = e.target.querySelector('input[name="id"]');
-
-  if (!idInput || !idInput.value) {
-    alert("Please select product options");
-    return;
-  }
-
-  try {
-    const res = await axios.post('/cart/add.js', {
-      id: idInput.value,
-      quantity: 1
-    });
-
-    console.log('Added to cart:', res.data);
-
-    alert('Added to cart!');
-    
-    // optional: close modal
-    quickViewContainer.classList.remove('active');
-
-  } catch (err) {
-    console.log(err.response?.data || err.message);
-    alert('Could not add to cart');
-  }
-});
-
