@@ -21,7 +21,7 @@
 }
 .product-quick-view__container{
     display: flex;
-    flex-direction;
+    flex-direction:column;
     justify-content: space-between;
   background:#fff;
   font-family: 'Jost';
