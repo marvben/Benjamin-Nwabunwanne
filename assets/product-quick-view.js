@@ -68,7 +68,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
   function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
     
- const optionsTemplate = const optionsTemplate = options.map(option => {
+const optionsTemplate = options.map(option => {
 
   // SIZE → dropdown
   if (option.name.toLowerCase() === "size") {
