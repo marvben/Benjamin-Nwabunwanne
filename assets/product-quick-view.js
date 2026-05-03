@@ -9,7 +9,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
          const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
         quickViewPopup.classList.add('active');
         const productUrl =  quickViewButton.dataset.productLink + '.js'
-        quickViewContainer.innerHTML = "Loading..."
+        quickViewContainer.innerHTML = "<p>Loading...</p>"
 
          axios.get(productUrl).then(()=>{
         quickViewContainer.innerHTML =  quickViewPopupTemplate(res.data);
