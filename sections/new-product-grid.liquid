@@ -99,7 +99,7 @@
     quickViewButton.addEventListener('click', ()=>{
       quickViewPopup.classList.add('active');
       const productUrl =  quickViewButton.dataset.productLink + '.js'
-
+console.log('hello')
       axios.get(productUrl).then(res  =>{
         console.log(res.data)
       }).catch(err =>{
