@@ -2,10 +2,11 @@ const quickViewButtons = document.querySelectorAll('.product-button');
   const quickViewPopup = document.querySelector('.product-quick-view__popup');
   const quickViewPopupOverlay  = document.querySelector('.product-quick-view__popup-overlay');
   const quickViewContainer = document.querySelector('.product-quick-view__container');
-  const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
+ 
 
   quickViewButtons.forEach(quickViewButton => {
     quickViewButton.addEventListener('click', async ()=>{
+         const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
         quickViewPopup.classList.add('active');
         const productUrl =  quickViewButton.dataset.productLink + '.js'
         quickViewContainer.innerHtml = "Loading..."
