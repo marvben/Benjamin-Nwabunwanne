@@ -46,6 +46,7 @@
       <!-- COLOR (display only, Shopify handles via variant) -->
        <div class="option-label">Color</div>
       <div class="product-quick-view__options colors">
+        <span class="slider"></span>
           {% assign colors = product.options_by_name['Color'].values %}
           {% for color in colors %}
             <label>
