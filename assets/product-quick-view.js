@@ -58,7 +58,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
   });
 
 async function openQuickView(handle) {
-    const res = await fetch(`/products/${handle}?view=quick-view`);
+    const res = await fetch(`${handle}?view=quick-view`);
     const html = await res.text();
 
     quickViewContainer.innerHTML = html;
