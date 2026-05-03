@@ -11,10 +11,7 @@
 
 .product-quick-view__popup-overlay{
     position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
+    inset:0;
     background:rgba(0,0,0,0.4);
     display:block !important;
     opacity:0;
@@ -44,7 +41,6 @@
 
 .product-quick-view__popup.active .product-quick-view__popup-overlay{
     opacity:1;
-    transition: opacity 3s ease
 }
 
 .product-quick-view__popup.active .product-quick-view__container{
