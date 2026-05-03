@@ -57,8 +57,9 @@
 .product-quick-view__content-image-wrapper{
   display:flex;
   flex-grow:1;
-  height:140px;
+  min-height:140px;
   width:120px;
+  height:100%;
   overflow:hidden;
 }
 .product-quick-view__content-image-wrapper img{
@@ -95,10 +96,10 @@ font-family: Lustria;
 font-size: 16px;
 line-height: 1.2;
 }
-.product-quick-view__content-text-desc{
+p.product-quick-view__content-text-desc{
 font-size: 14px;
 line-height: 1;
-letter-spacing: -1%;
+margin:0
 }
 
 .options-name{
