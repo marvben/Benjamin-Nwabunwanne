@@ -114,7 +114,7 @@ letter-spacing: 0%;
 
 }
 
-.product-quick-view__options {
+.product-quick-view__options.colors {
   position: relative;
   display: inline-flex;
   background: #f3f3f3;
@@ -123,12 +123,12 @@ letter-spacing: 0%;
 }
 
 /* hide radios */
-.product-quick-view__options input {
+.product-quick-view__options.colors input {
   display: none;
 }
 
 /* labels (touch-friendly buttons) */
-.product-quick-view__options label {
+.product-quick-view__options.colors label {
   position: relative;
   z-index: 2;
   padding: 10px 18px;
@@ -140,7 +140,7 @@ letter-spacing: 0%;
 }
 
 /* sliding background */
-.product-quick-view__options .slider {
+.product-quick-view__options.colors .slider {
   position: absolute;
   top: 4px;
   left: 4px;
@@ -153,7 +153,7 @@ letter-spacing: 0%;
 }
 
 /* active text color */
-.product-quick-view__options input:checked + label {
+.product-quick-view__options.colors input:checked + label {
   color: white;
 }
 
