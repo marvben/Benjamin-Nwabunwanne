@@ -5,15 +5,18 @@ const quickViewButtons = document.querySelectorAll('.product-button');
  
 
   quickViewButtons.forEach(quickViewButton => {
-    quickViewButton.addEventListener('click', async ()=>{
+    quickViewButton.addEventListener('click',  ()=>{
          const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
         quickViewPopup.classList.add('active');
         const productUrl =  quickViewButton.dataset.productLink + '.js'
         quickViewContainer.innerHtml = "Loading..."
-        const res = await axios.get(productUrl) 
+        
+         axios.get(productUrl).then(()=>{
         quickViewContainer.innerHtml =  quickViewPopupTemplate(res.data);
        // quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'));
        // quickViewPopupOverlay.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
+        })
+
   
          
 
