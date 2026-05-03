@@ -92,14 +92,19 @@
   const quickViewPopup = document.querySelector('.product-quick-view__popup');
   const quickViewPopupOverlay  = document.querySelector('.product-quick-view__popup-overlay');
   const quickViewContainer = document.querySelector('.product-quick-view__container');
+  const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
 
   quickViewButtons.forEach(quickViewButton => {
     quickViewButton.addEventListener('click', ()=>{
       quickViewPopup.classList.add('active');
-      quickViewPopupOverlay.classList.add('active');
-      quickViewContainer.classList.add('active')
+      // quickViewPopupOverlay.classList.add('active');
+      // quickViewContainer.classList.add('active')
     })
   });
+
+  quickViewCloseButton.addEventListener('click', ()=>{
+    quickViewPopup.classList.remove('active');
+  })
   
 {% endjavascript %}
 
