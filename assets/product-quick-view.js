@@ -73,7 +73,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
     <div class=${'product-quick-view__options-' + option.name.toLowerCase()} >
       <label class="product-quick-view__option" >
         ${option.name}
-      </label>
+      
 
       ${option.values.map(v => `
           <input 
@@ -82,6 +82,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
             value="${v}"
           />
       `).join('')}
+      </label>
     </div>
   `;
 }).join('');
