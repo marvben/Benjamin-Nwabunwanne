@@ -47,7 +47,7 @@
     opacity:1
 }
 
-.product-quick-view__container{
+.product-quick-view__container.active{
      transform:translateY(0);
 }
 .product-quick-view__content{
