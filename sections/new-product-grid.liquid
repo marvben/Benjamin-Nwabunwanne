@@ -96,7 +96,8 @@
   quickViewButtons.forEach(quickViewButton => {
     quickViewButtons.addEventListener('click', ()=>{
       quickViewPopup.classList.add('active');
-      quickViewPopupOverlay.class.add('active');
+      quickViewPopupOverlay.classList.add('active');
+      quickViewContainer.classList.add('active')
     })
   });
 {% endjavascript %}
