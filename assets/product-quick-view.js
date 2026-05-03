@@ -68,15 +68,26 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
   function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
     
-    const optionsTemplate = options.map(option => {
-        return`
-        <div class="product-quick-view__options">
-       <label class="product-quick-view__option">${option.name} 
-        ${option.values.map(v => `<input type="radio"  name=${v} value=${v} checked="true" }>`).join('');}
-        </label> 
-      </div>`
-        
-    }).join('');
+ const optionsTemplate = options.map(option => {
+  return `
+    <div class="product-quick-view__options">
+      <label class="product-quick-view__option">
+        ${option.name}
+      </label>
+
+      ${option.values.map(v => `
+        <label>
+          <input 
+            type="radio" 
+            name="${option.name}" 
+            value="${v}"
+          />
+          ${v}
+        </label>
+      `).join('')}
+    </div>
+  `;
+}).join('');
 
 
         return `
