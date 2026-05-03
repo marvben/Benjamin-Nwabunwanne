@@ -1,0 +1,114 @@
+.product-quick-view__container{
+  background:#fff;
+  width:100%;
+  height:70vh;
+  max-width:310px;
+  max-height:450px;
+  overflow:auto;
+  padding:20px;
+  position:relative
+}
+
+.product-quick-view__content{
+  display:flex;
+  flex-direction:row;
+  gap:10px;
+}
+
+.product-quick-view__content-image-wrapper{
+  display:flex;
+  flex-grow:1;
+  height:140px;
+  width:120px;
+  overflow:hidden;
+}
+.product-quick-view__content-image-wrapper img{
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.product-quick-view__content-text-wrapper{
+  max-width:150px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 20px;
+  flex-shrink:1;
+  font-weight: 300;
+  font-family: 'jost';
+}
+
+.product-quick-view__content-text-title,
+.product-quick-view__content-text-price,
+.product-quick-view__content-text-desc{
+  margin:0;
+}
+
+.product-quick-view__content-text-title{
+  font-size:16px;
+  line-height: 1.2;
+}
+.product-quick-view__content-text-price{
+font-family: Lustria;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.2;
+}
+.product-quick-view__content-text-desc{
+font-size: 14px;
+line-height: 1;
+letter-spacing: -1%;
+}
+
+.product-quick-view__button-wrapper{
+background:#000;
+color:#fff;
+display:flex;
+flex-direction:row;
+align-items:center;
+justify-content:center;
+gap:20px
+}
+.product-quick-view__button-icon{
+  width:30px;
+  height:auto;
+  overflow:hidden
+}
+.product-quick-view__button-icon img{
+width:100%;
+}
+
+.product-quick-view__close-button{
+  position:absolute;
+  top:10px;
+  right:10px;
+  display:inline-block;
+  width:15px;
+  height:15px;
+  transform:rotate(45deg);
+  z-index:100;
+  cursor:pointer
+}
+
+.product-quick-view__close-button::before,
+.product-quick-view__close-button::after{
+  content:"";
+  position:absolute;
+  background:#000;
+}
+
+.product-quick-view__close-button::before{
+  width:100%;
+  height:2px;
+  top:50%;
+  transform:translatey(-50%)
+}
+.product-quick-view__close-button::after{
+  width:2px;
+  height:100%;
+  left:50%;
+  transform:translatex(-50%)
+}
