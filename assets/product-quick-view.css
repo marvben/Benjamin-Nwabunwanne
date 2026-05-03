@@ -1,10 +1,17 @@
 .product-quick-view__popup{
     position:fixed;
+    inset:9;
+    z-index:100000000
+}
+
+.product-quick-view__popup-overlay{
+    position:absolute;
+    inset:0
     top:0;
     left:0;
     height:100%;
     width:100%;
-    background:rgba(0,0,0,0.4)
+    background:rgba(0,0,0,0.4);
 }
 .product-quick-view__container{
   background:#fff;
