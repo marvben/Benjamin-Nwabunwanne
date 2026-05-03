@@ -117,9 +117,10 @@ letter-spacing: 0%;
 .product-quick-view__options.colors {
   position: relative;
   display: inline-flex;
-  background: #f3f3f3;
-  border-radius: 10px;
-  padding: 4px;
+  background: #333;
+  border-radius: 0;
+  padding: 0;
+  border:solid 1px #000;
 }
 
 /* hide radios */
