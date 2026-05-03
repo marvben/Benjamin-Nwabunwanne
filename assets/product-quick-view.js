@@ -13,13 +13,6 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         await openQuickView(quickViewButton.dataset.productLink) 
 
         
-    
-
-       
-
-  
-         
-
 
 //         {
 //   id: 123456789,
