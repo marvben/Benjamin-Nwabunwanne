@@ -12,8 +12,8 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         quickViewContainer.innerHtml = "Loading..."
         const res = await axios.get(productUrl) 
         quickViewContainer.innerHtml =  quickViewPopupTemplate(res.data);
-        quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'));
-        quickViewPopupOverlay.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
+       // quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'));
+       // quickViewPopupOverlay.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
   
          
 
