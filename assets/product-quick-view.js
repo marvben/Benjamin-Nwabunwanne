@@ -68,21 +68,44 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
   function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
     
- const optionsTemplate = options.map(option => {
-  return `
-    <div class=${'product-quick-view__options-' + option.name.toLowerCase()} >
-      <label class="product-quick-view__option" >
-        ${option.name}
-      
+ const optionsTemplate = const optionsTemplate = options.map(option => {
 
-      ${option.values.map(v => `
-          <input 
-            type="radio" 
-            name="${option.name}" 
-            value="${v}"
-          />
-      `).join('')}
-      </label>
+  // SIZE → dropdown
+  if (option.name.toLowerCase() === "size") {
+    return `
+      <div class="product-quick-view__options">
+        <label>${option.name}</label>
+        <select name="size">
+          ${option.values.map(v => `
+            <option value="${v}">${v}</option>
+          `).join('')}
+        </select>
+      </div>
+    `;
+  }
+
+  // COLOR → checkboxes
+  if (option.name.toLowerCase() === "color") {
+    return `
+      <div class="product-quick-view__options">
+        <label>${option.name}</label>
+        <div>
+          ${option.values.map(v => `
+            <label>
+              <input type="checkbox" name="color" value="${v}" />
+              ${v}
+            </label>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  // fallback for other options
+  return `
+    <div class="product-quick-view__options">
+      <label>${option.name}</label>
+      ${option.values.map(v => `<span>${v}</span>`).join('')}
     </div>
   `;
 }).join('');
