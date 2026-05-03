@@ -35,7 +35,7 @@
     transition:transform 0.4s ease
 }
 .product-quick-view__popup.active{
-    display:flex
+    display:block
 }
 
 .product-quick-view__popup.active .product-quick-view__popup-overlay{
