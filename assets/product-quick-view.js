@@ -67,7 +67,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
 
   function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
-    const optionsTemplate = options.map((option) => option.name)
+    const optionsTemplate = options.map((option) => option.values.map(v=>v))
 
 
         return `
