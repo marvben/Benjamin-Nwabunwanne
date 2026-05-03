@@ -12,7 +12,8 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         const productUrl =  quickViewButton.dataset.productLink + '.js'
         quickViewContainer.innerHTML = "<p>Loading...</p>"
 
-        const res = await axios.get(productUrl) 
+        const res = await axios.get(productUrl);
+        const secT = await axios.get(productUrl + '?view=')
         quickViewContainer.innerHTML =  await quickViewPopupTemplate(res.data);
         const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
        if(quickViewCloseButton) {
@@ -87,7 +88,9 @@ const quickViewButtons = document.querySelectorAll('.product-button');
       <span class="options-name">Color</span>
       
       <div class="product-quick-view__color-options">
-    
+      ${options.map(option, index)=> `<label class="product-quick-view__color-option">White 
+          <input type="radio"  name=${option} value=${option} checked=${index === 1 ? true : false }>
+        </label>`}
     
         
         
