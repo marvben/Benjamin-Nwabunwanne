@@ -88,9 +88,9 @@ const quickViewButtons = document.querySelectorAll('.product-button');
       <span class="options-name">Color</span>
       
       <div class="product-quick-view__color-options">
-      ${options.map(option, index)=> `<label class="product-quick-view__color-option">White 
-          <input type="radio"  name=${option} value=${option} checked=${index === 1 ? true : false }>
-        </label>`}
+       <label class="product-quick-view__color-option">White 
+          <input type="radio"  name="white" value="white" checked="true" }>
+        </label> 
     
         
         
