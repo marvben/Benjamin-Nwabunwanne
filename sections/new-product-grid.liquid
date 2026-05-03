@@ -25,7 +25,7 @@
                   height: '100%',
                   class: 'new-product-image'
               }}
-              <i class="product-button"></i>
+              <i class="product-button" data-product-link="{{ product.url }}"></i>
             </div>
           {% endif %}
         {% endfor %}
@@ -97,6 +97,7 @@
   quickViewButtons.forEach(quickViewButton => {
     quickViewButton.addEventListener('click', ()=>{
       quickViewPopup.classList.add('active');
+      console.log(quickViewButton.data.product)
       // quickViewPopupOverlay.classList.add('active');
       // quickViewContainer.classList.add('active')
     })

@@ -42,6 +42,7 @@
 .product-quick-view__popup.active .product-quick-view__container{
      transform:translateY(0);
 }
+
 .product-quick-view__content{
   display:flex;
   flex-direction:row;
