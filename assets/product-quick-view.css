@@ -132,10 +132,10 @@ letter-spacing: 0%;
   width:50%;
   position: relative;
   z-index: 2;
-  padding: 10px 18px;
+  padding:0;
   cursor: pointer;
   user-select: none;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 14px;
   transition: color 0.2s ease;
 }
@@ -143,12 +143,12 @@ letter-spacing: 0%;
 /* sliding background */
 .product-quick-view__options.colors .slider {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  height: calc(100% - 8px);
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 50%; /* will be overridden by JS */
   background: black;
-  border-radius: 8px;
+  border-radius: 0;
   transition: transform 0.25s ease, width 0.25s ease;
   z-index: 1;
 }
