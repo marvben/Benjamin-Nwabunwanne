@@ -1,6 +1,6 @@
 .product-quick-view__popup{
     position:fixed;
-    inset:9;
+    inset:0;
     z-index:100000000
 }
 
