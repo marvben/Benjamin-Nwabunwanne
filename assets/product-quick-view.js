@@ -10,7 +10,7 @@
   quickViewButtons.forEach(quickViewButton => {
     quickViewButton.addEventListener('click', ()=>{
       quickViewPopup.classList.add('active');
-      const productUrl =  quickViewButton.dataset.productLink + '.json'
+      const productUrl =  quickViewButton.dataset.productLink + '.js'
       axios.get(productUrl).then(res  =>{
 
         const{id, title, description,price, images,featured_image, options, variants }  = res.data;
