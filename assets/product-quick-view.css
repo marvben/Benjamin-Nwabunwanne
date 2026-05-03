@@ -100,9 +100,15 @@ font-size: 14px;
 line-height: 1;
 }
 
-.options-name{
+
+#product-quick-view-form{
+  display:flex;
+  flex-direction:column;
+  flex-grow: 1;
+}
+
+.product-quick-view__options label{
 font-size: 14px;
-leading-trim: NONE;
 line-height: 130%;
 letter-spacing: 0%;
 
