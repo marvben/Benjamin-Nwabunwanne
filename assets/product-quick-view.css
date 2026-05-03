@@ -41,6 +41,9 @@ font-weight: 400;
   flex-direction:row;
   gap:10px;
 }
+.product-quick-view__form{
+    flex-grow:1
+}
 
 .product-quick-view__content-image-wrapper{
   display:flex;
