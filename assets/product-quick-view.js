@@ -67,7 +67,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
 
   function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
-    alert(options)
+    const optionsTemplate = options.map((option) => option)
 
 
         return `
@@ -85,7 +85,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
   <form id="product-quick-view-form" class="product-quick-view__form">
     <div class="product-quick-view__colors">
       <span class="options-name">Color</span>
-      
+      ${optionsTemplate}
       <div class="product-quick-view__color-options">
        <label class="product-quick-view__color-option">White 
           <input type="radio"  name="white" value="white" checked="true" }>
