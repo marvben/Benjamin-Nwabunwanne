@@ -88,14 +88,13 @@
 {% endschema %}
 
 {% javascript %}
-alert('hello')
   const quickViewButtons = document.querySelectorAll('.product-button');
   const quickViewPopup = document.querySelector('.product-quick-view__popup');
   const quickViewPopupOverlay  = document.querySelector('.product-quick-view__popup-overlay');
   const quickViewContainer = document.querySelector('.product-quick-view__container');
 
   quickViewButtons.forEach(quickViewButton => {
-    quickViewButtons.addEventListener('click', ()=>{
+    quickViewButton.addEventListener('click', ()=>{
       quickViewPopup.classList.add('active');
       quickViewPopupOverlay.classList.add('active');
       quickViewContainer.classList.add('active')
