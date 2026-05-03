@@ -2,6 +2,11 @@ const quickViewButtons = document.querySelectorAll('.product-button');
   const quickViewPopup = document.querySelector('.product-quick-view__popup');
   const quickViewPopupOverlay  = document.querySelector('.product-quick-view__popup-overlay');
   const quickViewContainer = document.querySelector('.product-quick-view__container');
+  let selectedOptions = {
+  Size: null,
+  Color: null
+};
+let productData = null;
  
 
   quickViewButtons.forEach(quickViewButton => {
@@ -13,7 +18,9 @@ const quickViewButtons = document.querySelectorAll('.product-button');
         quickViewContainer.innerHTML = "<p>Loading...</p>"
 
         const res = await axios.get(productUrl);
-        quickViewContainer.innerHTML = await quickViewPopupTemplate(res.data);
+        productData = res.data
+        quickViewContainer.innerHTML = await quickViewPopupTemplate(productData);
+        attachQuickViewEvents()
         const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
        if(quickViewCloseButton) {
             quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
@@ -64,8 +71,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
     })
   });
 
-
-
+  
 function quickViewPopupTemplate({ id, title, description, price, featured_image, options, variants }) {
 
 const optionsTemplate = options.map(option => {
@@ -137,3 +143,55 @@ return `
   <span class="product-quick-view__close-button"></span>
 `;
 }
+
+
+function attachQuickViewEvents() {
+
+  // SIZE
+  document.addEventListener('change', (e) => {
+    if (e.target.name === 'size') {
+      selectedOptions.Size = e.target.value;
+      updateVariant();
+    }
+  });
+
+  // COLOR (radio style)
+  document.addEventListener('change', (e) => {
+    if (e.target.name === 'color') {
+      selectedOptions.Color = e.target.value;
+      updateVariant();
+    }
+  });
+
+  // ADD TO CART
+  document.getElementById('quick-view-form')
+    .addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const id = document.querySelector('input[name="id"]').value;
+
+      await axios.post('/cart/add.js', {
+        id: id,
+        quantity: 1
+      });
+
+      alert('Added to cart!');
+    });
+}
+
+function updateVariant() {
+
+  if (!productData) return;
+
+  const variant = productData.variants.find(v => {
+    return (
+      v.option1 === selectedOptions.Size &&
+      v.option2 === selectedOptions.Color
+    );
+  });
+
+  if (variant) {
+    document.querySelector('input[name="id"]').value = variant.id;
+  }
+}
+
