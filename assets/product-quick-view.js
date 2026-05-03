@@ -58,10 +58,10 @@ const quickViewButtons = document.querySelectorAll('.product-button');
   });
 
 async function openQuickView(handle) {
-    const res = await fetch(`${handle}?view=quick-view`);
-    const html = await res.text();
+    const res = await fetch(`${handle}?sections=quick-view-product`);
+    const data = await res.json();
 
-    quickViewContainer.innerHTML = html;
+    quickViewContainer.innerHTML = data['quick-view-product'];
     quickViewContainer.classList.add('active');
     const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
     if(quickViewCloseButton) {
