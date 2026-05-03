@@ -8,12 +8,12 @@
   const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
 
   quickViewButtons.forEach(quickViewButton => {
-    quickViewButton.addEventListener('click', ()=>{
-      quickViewPopup.classList.add('active');
-      const productUrl =  quickViewButton.dataset.productLink + '.js'
-      axios.get(productUrl).then(res  =>{
-
-        quickViewPopupTemplate(res.data)
+    quickViewButton.addEventListener('click', async ()=>{
+        quickViewPopup.classList.add('active');
+        const productUrl =  quickViewButton.dataset.productLink + '.js'
+        quickViewPopup.innerHtml = "Loading..."
+        const res = await axios.get(productUrl) 
+        quickViewPopup.innerHtml =  quickViewPopupTemplate(res.data)
          
 
 
@@ -53,9 +53,7 @@
 //     }
 //   ]
 // }
-      }).catch(err =>{
-        console.log(err.message)
-      })
+ 
 
     })
   });
