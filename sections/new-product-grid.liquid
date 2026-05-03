@@ -89,7 +89,8 @@
 
 
 {% comment %} Temp popout layout {% endcomment %}
-
+<div class="product-quick-view__popup">
+  <div class="product-quick-view__popup-overlay"></div>
 <div class="product-quick-view__container">
   <div class="product-quick-view__content">
     <div class="product-quick-view__content-image-wrapper">
@@ -133,7 +134,8 @@
     
   </form>
   <span class="product-quick-view__close-button"></span>
-</div> 
+</div>
+</div>
 
 {{ 'product-quick-view.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'product-quick-view.js' | asset_url }}" defer="defer"></script>
