@@ -16,7 +16,7 @@
         const{id, title, description,price, images,featured_image, options, variants }  = res.data;
         //alert(options[0].name)
 
-        //alert(variants[0].name);
+        alert(variants[0].title);
 
 //         {
 //   id: 123456789,
