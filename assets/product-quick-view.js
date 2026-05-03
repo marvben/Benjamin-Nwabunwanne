@@ -77,7 +77,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
     </div>
     <div class="product-quick-view__content-text-wrapper">
       <h4 class="product-quick-view__content-text-title">${title}</h4>
-      <span class="product-quick-view__content-text-price">${price/100}€</span>
+      <span class="product-quick-view__content-text-price">${price}€</span>
       <div class="product-quick-view__content-text-desc">${description}</div>
     </div>
   </div>
