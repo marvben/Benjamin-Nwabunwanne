@@ -87,6 +87,20 @@
 }
 {% endschema %}
 
+{% javascript %}
+  const quickViewButtons = document.querySelectorAll('.product-button');
+  const quickViewPopup = document.querySelector('.product-quick-view__popup');
+  const quickViewPopupOverlay  = document.querySelector('.product-quick-view__popup-overlay');
+  const quickViewContainer = document.querySelector('.product-quick-view__container');
+
+  quickViewButtons.forEach(quickViewButton => {
+    quickViewButtons.addEventListener('click', ()=>{
+      quickViewPopup.classList.add('active');
+      quickViewPopupOverlay.class.add('active');
+    })
+  });
+{% endjavascript %}
+
 
 {% comment %} Temp popout layout {% endcomment %}
 <div class="product-quick-view__popup">
