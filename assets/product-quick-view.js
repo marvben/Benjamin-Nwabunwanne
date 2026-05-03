@@ -66,10 +66,11 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
 
 
-function quickViewPopupTemplate({ id, title, description, price, featured_image, options, variants }) {
-
+  function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
+    
 const optionsTemplate = options.map(option => {
 
+  // SIZE → dropdown
   if (option.name.toLowerCase() === "size") {
     return `
       <div class="product-quick-view__options">
@@ -83,6 +84,7 @@ const optionsTemplate = options.map(option => {
     `;
   }
 
+  // COLOR → checkboxes
   if (option.name.toLowerCase() === "color") {
     return `
       <div class="product-quick-view__options">
@@ -99,6 +101,7 @@ const optionsTemplate = options.map(option => {
     `;
   }
 
+  // fallback for other options
   return `
     <div class="product-quick-view__options">
       <label>${option.name}</label>
@@ -107,33 +110,31 @@ const optionsTemplate = options.map(option => {
   `;
 }).join('');
 
-return `
+
+        return `
   <div class="product-quick-view__content">
-    
     <div class="product-quick-view__content-image-wrapper">
-      <img src="${featured_image}" class="product-quick-view__content-image" width="100%" />
+    <img src=${featured_image} class="product-quick-view__content-image" 
+    height="100%" width="100%" alt=${title}>
     </div>
-
     <div class="product-quick-view__content-text-wrapper">
-      <h4>${title}</h4>
-      <span>${(price / 100).toFixed(2)}€</span>
-      <div>${description}</div>
+      <h4 class="product-quick-view__content-text-title">${title}</h4>
+      <span class="product-quick-view__content-text-price">${(price/100).toFixed(2)}€</span>
+      <div class="product-quick-view__content-text-desc">${description}</div>
     </div>
-
   </div>
+  <form id="product-quick-view-form" class="product-quick-view__form">
+    <div class="product-quick-view__colors">
+      ${optionsTemplate}
 
-  <form id="product-quick-view-form">
-
-    ${optionsTemplate}
-
-    <input type="hidden" name="id" value="${variants[0].id}">
-
-    <button type="submit" class="product-quick-view__button">
-      Add to cart
-    </button>
-
+      <button class="product-quick-view__button" type="submit">Add to cart
+        <div class="product-quick-view__button-icon" >
+        <img src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Line_15.png?v=1777474777" height="auto" width="100%">
+      </div>
+      </button>
+    
   </form>
-
   <span class="product-quick-view__close-button"></span>
-`;
-}
+        `
+  }
+ 
