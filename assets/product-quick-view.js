@@ -30,7 +30,7 @@ async function openQuickView(handle) {
 
 
 function animateColorBackground(){
-    const group = document.querySelector(".radio-group");
+    const group = document.querySelector(".product-quick-view__options.colors");
 const slider = group.querySelector(".slider");
 const labels = group.querySelectorAll("label");
 
