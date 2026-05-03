@@ -26,3 +26,25 @@ async function openQuickView(handle) {
             quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
     };
 }
+
+
+const group = document.querySelector(".radio-group");
+const slider = group.querySelector(".slider");
+const labels = group.querySelectorAll("label");
+
+function moveSlider(label) {
+  slider.style.width = `${label.offsetWidth}px`;
+  slider.style.transform = `translateX(${label.offsetLeft}px)`;
+}
+
+// init position (checked input)
+const checked = group.querySelector("input:checked");
+if (checked) {
+  moveSlider(group.querySelector(`label[for="${checked.id}"]`));
+}
+
+// hover + click support (touch friendly)
+labels.forEach(label => {
+  label.addEventListener("mouseenter", () => moveSlider(label));
+  label.addEventListener("click", () => moveSlider(label));
+});
