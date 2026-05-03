@@ -195,3 +195,34 @@ function updateVariant() {
   }
 }
 
+document.addEventListener('submit', async (e) => {
+  if (e.target.id !== 'quick-view-form') return;
+
+  e.preventDefault();
+
+  const idInput = e.target.querySelector('input[name="id"]');
+
+  if (!idInput || !idInput.value) {
+    alert("Please select product options");
+    return;
+  }
+
+  try {
+    const res = await axios.post('/cart/add.js', {
+      id: idInput.value,
+      quantity: 1
+    });
+
+    console.log('Added to cart:', res.data);
+
+    alert('Added to cart!');
+    
+    // optional: close modal
+    quickViewContainer.classList.remove('active');
+
+  } catch (err) {
+    console.log(err.response?.data || err.message);
+    alert('Could not add to cart');
+  }
+});
+
