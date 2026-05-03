@@ -104,6 +104,10 @@
 
   quickViewCloseButton.addEventListener('click', ()=>{
     quickViewPopup.classList.remove('active');
+  });
+
+  quickViewPopupOverlay.addEventListener('click', ()=>{
+    quickViewPopup.classList.remove('active');
   })
   
 {% endjavascript %}
