@@ -117,7 +117,7 @@ letter-spacing: 0%;
 .product-quick-view__options.colors {
   position: relative;
   display: inline-flex;
-  background: #333;
+  background: #fff;
   border-radius: 0;
   padding: 0;
   border:solid 1px #000;
