@@ -125,20 +125,7 @@ const optionsTemplate = options.map(option => {
   </div>
   <form id="product-quick-view-form" class="product-quick-view__form">
     <div class="product-quick-view__colors">
-      <span class="options-name">Color</span>
       ${optionsTemplate}
-    </div>
-
-    <div class="product-quick-view__sizes">
-      <label for="size-options" class="options-name" >Size</label>
-      <select id="size-options" class="product-quick-view__size-options">
-        <option class="product-quick-view__size-option" value="L" >White</option>
-        <option class="product-quick-view__size-option" value="L" >White</option>
-        <option class="product-quick-view__size-option" value="L" >White</option>
-        <option class="product-quick-view__size-option" value="L" >White</option>
-      </select>
-    </div>
-
       <button class="product-quick-view__button" type="submit">Add to cart
         <div class="product-quick-view__button-icon" >
         <img src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Line_15.png?v=1777474777" height="auto" width="100%">
