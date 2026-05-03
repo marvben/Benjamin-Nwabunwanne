@@ -101,7 +101,7 @@
       const productUrl =  quickViewButton.dataset.productLink + '.js'
 
       axios.get(productUrl).then(res  =>{
-        alert(res.data.product)
+        alert(res.data)
       }).catch(err =>{
         alert(err.message)
       })
