@@ -99,7 +99,7 @@
       quickViewPopup.classList.add('active');
       const productUrl quickViewButton.dataset.productLink + '.js'
 
-      fetch(productUrl).then(res =>res.json()).then(product=>{
+      fetch(productUrl).then(res => res.json()).then( product =>{
         alert(product.title)
       })
 
