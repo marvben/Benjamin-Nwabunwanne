@@ -1,7 +1,4 @@
-
-
- 
-  const quickViewButtons = document.querySelectorAll('.product-button');
+const quickViewButtons = document.querySelectorAll('.product-button');
   const quickViewPopup = document.querySelector('.product-quick-view__popup');
   const quickViewPopupOverlay  = document.querySelector('.product-quick-view__popup-overlay');
   const quickViewContainer = document.querySelector('.product-quick-view__container');
@@ -13,7 +10,10 @@
         const productUrl =  quickViewButton.dataset.productLink + '.js'
         quickViewContainer.innerHtml = "Loading..."
         const res = await axios.get(productUrl) 
-        quickViewContainer.innerHtml =  quickViewPopupTemplate(res.data)
+        quickViewContainer.innerHtml =  quickViewPopupTemplate(res.data);
+        quickViewCloseButton.addEventListener('click', => quickViewPopup.classList.remove('active'););
+        quickViewPopupOverlay.addEventListener('click', => quickViewPopup.classList.remove('active');)
+  
          
 
 
@@ -58,14 +58,7 @@
     })
   });
 
-  quickViewCloseButton.addEventListener('click', ()=>{
-    quickViewPopup.classList.remove('active');
-  });
 
-  quickViewPopupOverlay.addEventListener('click', ()=>{
-    quickViewPopup.classList.remove('active');
-  })
-  
 
   function quickViewPopupTemplate({id, title, description,price, images,featured_image, options, variants }) {
 
