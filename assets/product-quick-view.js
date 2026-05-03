@@ -38,9 +38,7 @@ const checked = group.querySelector("input:checked");
 function moveSlider(label) {
   slider.style.width = `${label.offsetWidth}px`;
   slider.style.transform = `translateX(${label.offsetLeft}px)`;
-  if(checked){
-    label.style.color="#fff"
-  }
+
 }
 
 // init position (checked input)
