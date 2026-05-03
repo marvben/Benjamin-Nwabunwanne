@@ -84,13 +84,12 @@ const quickViewButtons = document.querySelectorAll('.product-button');
   <form id="product-quick-view-form" class="product-quick-view__form">
     <div class="product-quick-view__colors">
       <span class="options-name">Color</span>
+      
       <div class="product-quick-view__color-options">
-        <label class="product-quick-view__color-option">White 
-          <input type="radio"  name="color" value="white" checked="true">
-        </label>
-        <label   class="product-quick-view__color-option">Black
-          <input type="radio" name="color" value="black">
-        </label>
+      ${options.map(option, index)=> `<label class="product-quick-view__color-option">White 
+          <input type="radio"  name=${option} value=${option} checked=${index === 1 ? true : false }>
+        </label>`}
+    
         
         
       </div>
