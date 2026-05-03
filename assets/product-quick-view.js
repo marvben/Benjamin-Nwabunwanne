@@ -76,14 +76,11 @@ const quickViewButtons = document.querySelectorAll('.product-button');
       </label>
 
       ${option.values.map(v => `
-        <label>
           <input 
             type="radio" 
             name="${option.name}" 
             value="${v}"
           />
-          ${v}
-        </label>
       `).join('')}
     </div>
   `;
