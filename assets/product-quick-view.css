@@ -17,12 +17,11 @@
 .product-quick-view__container .shopify-section{
     display: flex;
     flex-direction:column;
-    justify-content: space-between;
+    justify-content: flex-start;
     background:#fff;
     font-family: 'Jost';
     font-weight: 400;
     width:100%;
-    height:70vh;
     max-width:310px;
     max-height:450px;
     height:450px;;
