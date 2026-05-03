@@ -1,0 +1,83 @@
+<div class="product-quick-view__container">
+
+  <div class="product-quick-view__content">
+
+    <div class="product-quick-view__content-image-wrapper">
+      <img 
+        src="{{ product.featured_image | image_url: width: 800 }}" 
+        class="product-quick-view__content-image"
+        width="100%"
+        height="100%"
+        alt="{{ product.title }}"
+      >
+    </div>
+
+    <div class="product-quick-view__content-text-wrapper">
+      <h4 class="product-quick-view__content-text-title">
+        {{ product.title }}
+      </h4>
+
+      <span class="product-quick-view__content-text-price">
+        {{ product.price | money }}
+      </span>
+
+      <div class="product-quick-view__content-text-desc">
+        {{ product.description }}
+      </div>
+    </div>
+
+  </div>
+
+  {% form 'product', product, id: 'product-quick-view-form' %}
+
+    <div class="product-quick-view__colors">
+
+      <!-- SIZE -->
+      <div class="product-quick-view__options">
+        <label>Size</label>
+        <select name="id">
+          {% for variant in product.variants %}
+            {% if variant.available %}
+              <option value="{{ variant.id }}">
+                {{ variant.title }}
+              </option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- COLOR (display only, Shopify handles via variant) -->
+      <div class="product-quick-view__options">
+        <label>Color</label>
+        <div>
+          {% assign colors = product.options_by_name['Color'].values %}
+          {% for color in colors %}
+            <label>
+              <input type="radio" name="color-display" value="{{ color }}">
+              {{ color }}
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- ADD TO CART -->
+      <button class="product-quick-view__button" type="submit">
+        Add to cart
+
+        <div class="product-quick-view__button-icon">
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Line_15.png?v=1777474777"
+            width="100%"
+            height="auto"
+          >
+        </div>
+
+      </button>
+
+    </div>
+
+  {% endform %}
+
+  <span class="product-quick-view__close-button"></span>
+
+</div>

@@ -5,19 +5,17 @@ const quickViewButtons = document.querySelectorAll('.product-button');
  
 
   quickViewButtons.forEach(quickViewButton => {
-    quickViewPopupOverlay.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
-    quickViewButton.addEventListener('click', async ()=>{
-        
-        quickViewPopup.classList.add('active');
-        const productUrl =  quickViewButton.dataset.productLink + '.js'
-        quickViewContainer.innerHTML = "<p>Loading...</p>"
+    quickViewPopupOverlay.addEventListener('click', ()=> quickViewPopup.classList.remove('active'));
 
-        const res = await axios.get(productUrl);
-        quickViewContainer.innerHTML = await quickViewPopupTemplate(res.data);
-        const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
-       if(quickViewCloseButton) {
-            quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
-            };
+    quickViewButton.addEventListener('click', async ()=>{
+        quickViewPopup.classList.add('active');
+        quickViewContainer.innerHTML = "<p>Loading...</p>"
+        await openQuickView(quickViewButton.dataset.productLink) 
+
+        
+    
+
+       
 
   
          
@@ -63,6 +61,18 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
     })
   });
+
+async function openQuickView(handle) {
+    const res = await fetch(`/products/${handle}?view=quick-view`);
+    const html = await res.text();
+
+    quickViewContainer.innerHTML = html;
+    quickViewContainer.classList.add('active');
+    const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
+    if(quickViewCloseButton) {
+            quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
+    };
+}
 
 
 
