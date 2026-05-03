@@ -12,9 +12,8 @@
         quickViewPopup.classList.add('active');
         const productUrl =  quickViewButton.dataset.productLink + '.js'
         quickViewContainer.innerHtml = "Loading..."
-        const res = await axios.get(productUrl) ;
-        quickViewContainer.classList.add('product-quick-view__container');
-        quickViewContainer.innerHtml =   quickViewPopupTemplate(res.data);
+        const res = await axios.get(productUrl) 
+        quickViewContainer.innerHtml =  quickViewPopupTemplate(res.data)
          
 
 
@@ -72,7 +71,7 @@
 
 
         return `
-        
+        <div class="product-quick-view__container">
   <div class="product-quick-view__content">
     <div class="product-quick-view__content-image-wrapper">
     <img src=${featured_image} class="product-quick-view__content-image" 
@@ -117,6 +116,7 @@
     
   </form>
   <span class="product-quick-view__close-button"></span>
+</div>
         `
   }
  
