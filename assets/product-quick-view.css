@@ -42,11 +42,11 @@
     display:flex
 }
 
-.product-quick-view__popup-overlay.active{
+.product-quick-view__popup.active .product-quick-view__popup-overlay{
     opacity:1
 }
 
-.product-quick-view__container.active{
+.product-quick-view__popup.active .product-quick-view__container{
      transform:translateY(0);
 }
 .product-quick-view__content{
