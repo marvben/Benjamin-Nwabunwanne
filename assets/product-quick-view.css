@@ -14,7 +14,7 @@
     display:block !important;
     opacity:0;
 }
-.product-quick-view__container{
+.product-quick-view__container .shopify-section{
     display: flex;
     flex-direction:column;
     justify-content: space-between;
@@ -39,7 +39,7 @@
     opacity:1;
 }
 
-.product-quick-view__popup.active .product-quick-view__container{
+.product-quick-view__popup.active .product-quick-view__container .shopify-section{
      transform:translateY(0);
 }
 
