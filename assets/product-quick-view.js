@@ -14,7 +14,7 @@ const quickViewButtons = document.querySelectorAll('.product-button');
 
         const res = await axios.get(productUrl);
         const secT = await axios.get(productUrl + '?view=quick-view')
-        quickViewContainer.innerHTML =secT.data.?['quick-view']; // await quickViewPopupTemplate(res.data);
+        quickViewContainer.innerHTML =secT.data?.['quick-view']; // await quickViewPopupTemplate(res.data);
         const quickViewCloseButton = document.querySelector('.product-quick-view__close-button')
        if(quickViewCloseButton) {
             quickViewCloseButton.addEventListener('click', ()=> quickViewPopup.classList.remove('active'))
