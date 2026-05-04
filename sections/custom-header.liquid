@@ -130,8 +130,8 @@ letter-spacing: 0px;
         padding:0
     }
 
-    .cutstom-nav-wrapper for-mobile.active .dropdown-button.open,
-    .cutstom-nav-wrapper for-mobile.active .nav-dropdown{
+    .cutstom-nav-wrapper.for-mobile.active .dropdown-button.open,
+    .cutstom-nav-wrapper.for-mobile.active .nav-dropdown{
         display:flex
     }
 
@@ -141,10 +141,10 @@ letter-spacing: 0px;
 </style>
 
 {%  javascript %}
-  const navButtonClose = document.queryselector('dropdown-button close');
-  const navButtonOpen = document.queryselector('dropdown-button open');
+  const navWrapperMobile = document.queryselector('.cutstom-nav-wrapper.for-mobile')
+  const dropdownButtosnWrapper = document.queryselector('.dropdown-buttons-wrapper')
 
-  navButtonClose.addEventListene('click', )
+  dropdownButtosnWrapper.addEventListene('click', ()=>{navWrapperMobile.classList.toggle('active')} )
 {% endjavascript %}
 
 
