@@ -11,7 +11,10 @@
                 <img class="dropdown-button close" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115.png?v=1777917810" height="auto" width="18px">
                 <img class="dropdown-button open" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115_1.png?v=1777917812" height="auto" width="18px">
             </div>
-            <a class="site-logo" href="/"><img src="{{section.settings.site_logo | image_url: width: 150}}" width="150px" height="auto"></a>
+            <div class="logo-wrapper">
+                <a class="site-logo" href="/"><img src="{{section.settings.site_logo | image_url: width: 150}}" width="150px" height="auto"></a>
+            </div>
+            
         </div>
         <div class="nav-dropdown">
             <div class="site-notice">{{ section.settings.nav_notice }}</div>
@@ -56,7 +59,10 @@
     width:150px;
     text-decoration:none
 }
-.cutstom-nav-wrapper.for-mobile .site-logo{
+.cutstom-nav-wrapper.for-mobile .logo-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
     flex-grow:1
 }
 
