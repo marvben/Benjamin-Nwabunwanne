@@ -156,7 +156,7 @@ letter-spacing: 0%;
 
 /* active text color */
 .product-quick-view__options.colors input:checked + label{
-  color: red !important;
+  color: #fff !important;
 }
 
 
