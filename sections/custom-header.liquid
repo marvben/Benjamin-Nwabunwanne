@@ -1,8 +1,8 @@
 <nav class="custom-nav">
     <div class="cutstom-nav-wrapper">
-        <div class="site-title">title</div>
-        <div class="site-notice">Find the ideal gift for your loved ones.</div>
-        <div class="nav-button">choose gift</div>
+        <div class="site-logo"><img src="{{section.settings.site_logo}}" width="300px" height="auto"></div>
+        <div class="site-notice">{{ section.settings.nav_notice }}</div>
+        <a class="nav-button" href="{{ section.settings.button_icon }}">{{ section.settings.button_text }} <img src="{{section.settings.button_icon}}" width="50px" height="auto"></a>
     </div> 
 </nav>
 
@@ -24,3 +24,62 @@
     max-width:1440px;
 }
 </style>
+
+
+{% schema %}
+{
+  "name": "Custom header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "site_logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background",
+      "default": "rgba(255, 245, 68, 1)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "button_icon",
+      "label": "Button Icon"
+    },
+    {
+      "type": "text",
+      "id": "nav_notice",
+      "label": "Nav Notive",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "color",
+      "id": "nav_notice_text_color",
+      "label": "Nav Notice Text Color",
+      "default": "#000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "custom header"
+    }
+  ]
+}
+{% endschema %}
