@@ -28,13 +28,17 @@
     font-size: 16px;
     text-align: center;
 }
- .cutstom-nav-wrapper{
+ .cutstom-nav-wrapper,
+ .cutstom-nav-wrapper.for-mobile .nav-top{
     display:flex;
     align-items:center;
     justify-content:space-between;
     padding:10px 50px;
     width:100%;
     max-width:1440px;
+}
+.cutstom-nav-wrapper.for-mobile .nav-top{
+    justify-content:center;
 }
 
 a.nav-button{
