@@ -161,6 +161,49 @@ letter-spacing: 0%;
 
 
 
+
+
+.product-quick-view__options.sizes {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+}
+
+.product-quick-view__options.sizes select {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none; /* removes default arrow */
+}
+
+/* custom arrow */
+.product-quick-view__options.sizes::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  pointer-events: none;
+  color: #555;
+}
+
+/* focus effect */
+.product-quick-view__options.sizes select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+
+
+
+
+
+
 .product-quick-view__button{
     margin-top:auto;
 background:#000;
