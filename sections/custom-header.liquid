@@ -7,9 +7,9 @@
 
     <div class="cutstom-nav-wrapper for-mobile">
         <div class="nav-top">
-            <div class="dropdown-bttons">
-                <img class="dropdwon-button close" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115.png?v=1777917810" height="auto" width="18px">
-                <img class="dropdwon-button open" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115_1.png?v=1777917812" height="auto" width="18px">
+            <div class="dropdown-buttons-wrapper">
+                <img class="dropdown-button close" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115.png?v=1777917810" height="auto" width="18px">
+                <img class="dropdown-button open" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115_1.png?v=1777917812" height="auto" width="18px">
             </div>
             <a class="site-logo" href="/"><img src="{{section.settings.site_logo | image_url: width: 150}}" width="150px" height="auto"></a>
         </div>
@@ -88,7 +88,7 @@ letter-spacing: 0px;
        position:relative
 }
 
-.cutstom-nav-wrapper.for-mobile .dropdwon-button{
+.cutstom-nav-wrapper.for-mobile .dropdown-button{
     cursor:pointer
 }
 
@@ -109,13 +109,16 @@ letter-spacing: 0px;
 }
 
 
-
+.dropdown-buttons-wrapper{
+    display:flex;
+    cursor:pointer
+}
 
 
 @media (max-width:749px){
     .cutstom-nav-wrapper.for-desktop, 
-    .dropdwon-button.open,
-    .cutstom-nav-wrapper for-mobile.active .dropdwon-button.close{
+    .dropdown-button.open,
+    .cutstom-nav-wrapper for-mobile.active .dropdown-button.close{
         display:none
     }
     .cutstom-nav-wrapper.for-mobile{
@@ -127,7 +130,7 @@ letter-spacing: 0px;
         padding:0
     }
 
-    .cutstom-nav-wrapper for-mobile.active .dropdwon-button.open,
+    .cutstom-nav-wrapper for-mobile.active .dropdown-button.open,
     .cutstom-nav-wrapper for-mobile.active .nav-dropdown{
         display:flex
     }
@@ -138,8 +141,8 @@ letter-spacing: 0px;
 </style>
 
 {%  javascript %}
-  const navButtonClose = document.queryselector('dropdwon-button close');
-  const navButtonOpen = document.queryselector('dropdwon-button open');
+  const navButtonClose = document.queryselector('dropdown-button close');
+  const navButtonOpen = document.queryselector('dropdown-button open');
 
   navButtonClose.addEventListene('click', )
 {% endjavascript %}
