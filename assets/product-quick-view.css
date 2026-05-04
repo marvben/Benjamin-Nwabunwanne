@@ -207,13 +207,13 @@ letter-spacing: 0%;
 }
 
 .product-quick-view__options.sizes select option{
-  background-color: :#fff;
+  background-color: #fff;
   border:none;
-  padding:10px 18px
+  padding:10px 18px !important
 }
 
 .product-quick-view__options.sizes select option:hover{
-  background:#000;
+  background-color:#000;
   color:#fff
 }
 
