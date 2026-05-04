@@ -166,14 +166,13 @@ letter-spacing: 0%;
 .product-quick-view__options.sizes {
   position: relative;
   width: 100%;
-  max-width: 250px;
 }
 
 .product-quick-view__options.sizes select {
   width: 100%;
-  padding: 10px 40px 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 10px 40px 10px 18px;
+  border: 1px solid #000;
+  border-radius: 0px;
   background: #fff;
   font-size: 14px;
   cursor: pointer;
@@ -189,7 +188,7 @@ letter-spacing: 0%;
   transform: translateY(-50%);
   font-size: 12px;
   pointer-events: none;
-  color: #555;
+  color: #000;
 }
 
 /* focus effect */
