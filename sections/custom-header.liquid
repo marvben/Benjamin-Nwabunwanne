@@ -1,9 +1,18 @@
 <nav class="custom-nav">
-    <div class="cutstom-nav-wrapper">
+    <div class="cutstom-nav-wrapper for-desktop">
         <div class="site-logo"><img src="{{section.settings.site_logo}}" width="300px" height="auto"></div>
         <div class="site-notice">{{ section.settings.nav_notice }}</div>
         <a class="nav-button" href="{{ section.settings.button_icon }}">{{ section.settings.button_text }} <img src="{{section.settings.button_icon}}" width="50px" height="auto"></a>
     </div> 
+
+    <div class="cutstom-nav-wrapper for-mobile">
+        <div class="nav-top">
+            <img class="dropdwon-button close" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115.png?v=1777917810" height="auto" width="18px">
+            <img class="dropdwon-button open" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115_1.png?v=1777917812" height="auto" width="18px">
+            <div class="site-logo"><img src="{{section.settings.site_logo}}" width="300px" height="auto"></div>
+        </div>
+        <div class="nav-dropdown">dropdown</div>
+    </div>
 </nav>
 
 
