@@ -149,7 +149,7 @@ letter-spacing: 0%;
   top:0;
   height:100%;
   width:5px;
-  background:red;
+  background:var(--option-color);
 }
 
 /* sliding background */
