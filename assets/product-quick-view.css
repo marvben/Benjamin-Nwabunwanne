@@ -191,6 +191,15 @@ letter-spacing: 0%;
   color: #000;
 }
 
+.product-quick-view__options.sizes::before{
+  content:"";
+  position:absolute;
+  right:40px;
+  height:100%;
+  width:1px;
+  background:#000
+}
+
 /* focus effect */
 .product-quick-view__options.sizes select:focus {
   outline: none;
