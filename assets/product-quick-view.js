@@ -48,7 +48,7 @@ if (checked) {
 
 // hover + click support (touch friendly)
 labels.forEach(label => {
-  label.addEventListener("mouseenter", () => moveSlider(label));
+  //label.addEventListener("mouseenter", () => moveSlider(label));
   label.addEventListener("click", () => moveSlider(label));
 });
 }
