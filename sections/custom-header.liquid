@@ -1,6 +1,6 @@
 <nav class="custom-nav">
     <div class="cutstom-nav-wrapper for-desktop">
-        <div class="site-logo"><img src="{{section.settings.site_logo}}" width="300px" height="auto"></div>
+        <div class="site-logo"><img src="{{section.settings.site_logo}}" width="100%" height="auto"></div>
         <div class="site-notice">{{ section.settings.nav_notice }}</div>
         <a class="nav-button" href="{{ section.settings.button_icon }}">{{ section.settings.button_text }} <img src="{{section.settings.button_icon}}" width="50px" height="auto"></a>
     </div> 
@@ -46,9 +46,19 @@
     max-width:1440px;
 }
 .cutstom-nav-wrapper.for-mobile .nav-top{
-    justify-content:center;
+    justify-content:flex-start;
 }
 
+.site-logo{
+    width:150px
+}
+.cutstom-nav-wrapper.for-mobile .site-logo{
+    flex-grow:1
+}
+
+.site-logo img{
+width:100%
+}
 
 a.nav-button{
     display:flex;
