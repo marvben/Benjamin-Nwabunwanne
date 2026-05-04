@@ -32,8 +32,8 @@
     text-align: center;
 }
 
-.for-desktop{
-display:none !important
+.cutstom-nav-wrapper.for-mobile{
+    display:none
 }
 
  .cutstom-nav-wrapper,
@@ -49,9 +49,6 @@ display:none !important
     justify-content:center;
 }
 
-.dropdwon-button{
-    margin-right:auto
-}
 
 a.nav-button{
     display:flex;
@@ -75,8 +72,20 @@ letter-spacing: 0px;
 
 }
 
+.dropdwon-button{
+    margin-right:auto
+}
+
 .dropdwon-button.open, .nav-dropdown{
 display:none
+}
+
+
+@media (max-width:749px){
+    .cutstom-nav-wrapper.for-desktop{
+    display:none
+}
+
 }
 </style>
 
