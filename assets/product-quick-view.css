@@ -166,6 +166,7 @@ letter-spacing: 0%;
 .product-quick-view__options.sizes {
   position: relative;
   width: 100%;
+  margin-top:10px
 }
 
 .product-quick-view__options.sizes select {
