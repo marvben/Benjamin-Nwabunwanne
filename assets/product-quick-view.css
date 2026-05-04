@@ -155,9 +155,8 @@ letter-spacing: 0%;
 }
 
 /* active text color */
-.product-quick-view__options.colors input:checked + label,
-.product-quick-view__options.colors input:checked + label:hover{
-  color: white;
+.product-quick-view__options.colors input:checked + label{
+  color: red !important;
 }
 
 
