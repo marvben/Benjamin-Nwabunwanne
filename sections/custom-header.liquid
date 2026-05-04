@@ -13,7 +13,7 @@
         </div>
         <div class="nav-dropdown">
             <div class="site-notice">{{ section.settings.nav_notice }}</div>
-            <a class="nav-button" href="{{ section.settings.button_icon }}">{{ section.settings.button_text }} <img src="{{section.settings.button_icon}}" width="50px" height="auto"></a>
+            <a class="nav-button" href="{{ section.settings.button_icon }}">{{ section.settings.button_text }} <img src="{{section.settings.button_icon | image_url: width: 50}}" width="25px" height="auto"></a>
         </div>
     </div>
 </nav>
