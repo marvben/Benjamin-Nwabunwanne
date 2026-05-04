@@ -213,8 +213,8 @@ letter-spacing: 0%;
 }
 
 .product-quick-view__options.sizes select option:hover{
-  background-color:#000;
-  color:#fff
+  box-shadow: 0 0 10px 100px #1882A8 inset;
+  color: white;
 }
 
 
