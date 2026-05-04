@@ -111,7 +111,7 @@ letter-spacing: 0px;
 
 .dropdown-buttons-wrapper{
     display:flex;
-    cursor:pointer
+    cursor:pointer;
 }
 
 
@@ -126,8 +126,10 @@ letter-spacing: 0px;
         display:flex
     }
     
+
    .cutstom-nav-wrapper.for-mobile .nav-top{
-        padding:0
+        padding:0;
+        gap:30px
     }
 
     .cutstom-nav-wrapper.for-mobile.active .dropdown-button.open,
@@ -141,8 +143,8 @@ letter-spacing: 0px;
 </style>
 
 {%  javascript %}
-  const navWrapperMobile = document.queryselector('.cutstom-nav-wrapper.for-mobile')
-  const dropdownButtosnWrapper = document.queryselector('.dropdown-buttons-wrapper')
+  const navWrapperMobile = document.querySelector('.cutstom-nav-wrapper.for-mobile')
+  const dropdownButtosnWrapper = document.querySelector('.dropdown-buttons-wrapper')
 
   dropdownButtosnWrapper.addEventListene('click', ()=>{navWrapperMobile.classList.toggle('active')} )
 {% endjavascript %}
