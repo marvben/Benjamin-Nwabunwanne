@@ -11,7 +11,10 @@
             <img class="dropdwon-button open" src="https://cdn.shopify.com/s/files/1/0988/0495/7495/files/Group_1000008115_1.png?v=1777917812" height="auto" width="18px">
             <div class="site-logo"><img src="{{section.settings.site_logo}}" width="300px" height="auto"></div>
         </div>
-        <div class="nav-dropdown">dropdown</div>
+        <div class="nav-dropdown">
+            <div class="site-notice">{{ section.settings.nav_notice }}</div>
+            <a class="nav-button" href="{{ section.settings.button_icon }}">{{ section.settings.button_text }} <img src="{{section.settings.button_icon}}" width="50px" height="auto"></a>
+        </div>
     </div>
 </nav>
 
@@ -30,7 +33,8 @@
 }
 
 .for-desktop{
-display:none !important}
+display:none !important
+}
 
  .cutstom-nav-wrapper,
  .cutstom-nav-wrapper.for-mobile .nav-top{
@@ -69,6 +73,10 @@ a.nav-button{
 line-height: 13.42px;
 letter-spacing: 0px;
 
+}
+
+.dropdwon-button.open, .nav-dropdown{
+display:none
 }
 </style>
 
