@@ -41,6 +41,7 @@
     {%- endif -%}
 
     {{ content_for_header }}
+    {% section 'custom-header' %}
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
